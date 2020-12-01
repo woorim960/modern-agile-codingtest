@@ -1,4 +1,3 @@
 function solution(s){
-  const a
-  s.match('/p') === true
-    return a
+    return s.toLowerCase().split('p').length === s.toLowerCase().split('y').length
+}
