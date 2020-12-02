@@ -6,7 +6,7 @@ function solution(s) {
   }
 }
 
-// ------
+// 최적화
 
 function solution(s) {
   if (s.length % 2) {
