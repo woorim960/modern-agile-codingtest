@@ -1,9 +1,0 @@
-function solution(arr) {
-    let deduplication = new Array();
-    for(let i = 0; i < arr.length; i++) {
-        if (arr[i] !== arr[i + 1]) {
-            deduplication.push(arr[i]);
-        }
-    }
-    return deduplication;
-}
