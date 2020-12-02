@@ -1,4 +1,4 @@
-서울에서 김서방 찾기
+//서울에서 김서방 찾기
 function solution(seoul) {
     let answer = '';
     let lens = seoul.length;
@@ -10,14 +10,14 @@ function solution(seoul) {
     }
     return "김서방은 "+i+"에 있다";
 }
---------------------------------------
-문자열 내 p와 y의 개수 세기
+//--------------------------------------
+//문자열 내 p와 y의 개수 세기
 
 function solution(s){
     return s.toLowerCase().split('p').length === s.toLowerCase().split('y').length;
 }
--------------------------------------
-문자열 내림차순으로 배치하기
+//-------------------------------------
+//문자열 내림차순으로 배치하기
 
 function solution(s) {
     const answer = s.split('').sort().reverse().join('');
@@ -38,8 +38,8 @@ function solution(n) {
     }
     return answer;
 }
------------------------------------------
-가운데 글자 가져오기
+//-----------------------------------------
+//가운데 글자 가져오기
 
 function solution(s) {
     let answer = '';
@@ -54,8 +54,8 @@ function solution(s) {
     }
     return answer;
 }
-----------------------------------
-두 정수 사이의 합
+//----------------------------------
+//두 정수 사이의 합
 
 function solution(a, b) {
     let answer = 0;
@@ -77,8 +77,8 @@ function solution(a, b) {
     return answer;
 }
 
----------------------------------
-같은 숫자는 싫어
+//---------------------------------
+//같은 숫자는 싫어
 
 function solution(arr)
 {
