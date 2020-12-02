@@ -1,3 +1,0 @@
-function solution(s){
-    console.log(s.indexOf('p'));
-}
