@@ -20,7 +20,7 @@
 
 ## 📈 무엇을 왜 하는가?
 * 언어 : 자바스크립트
-* 저지 사이트 : [프로그래머스](https://programmers.co.kr/learn/challenges)
+* 저지 사이트 : [프로그래머스](https://programmers.co.kr/learn/challenges)  
 코딩 문제 풀이를 통하여 자바스크립트 문법을 익히고, 효율적인 코딩과 컨벤션이 무엇인지 공부한다.
 궁극적으로 자바스크립트 언어를 통해 웹 서비스를 개발하기 위함이다.
 
@@ -32,7 +32,8 @@
 3. '파일명.js'를 개인별 Fork한 Repo의 Branch로 PUSH
 4. 개인별 깃허브 Repo에 PUSH된 Branch를 [woorim960/woowahan-agile-codingtest](https://github.com/woorim960/woowahan-agile-codingtest)로 PR을 보냄
 5. 리뷰어 **박우림**이 도착한 PR을 검토하여 코드 리뷰
-6. 해당 과정을 반복 -> 자바스크립트 문법에 적응 & 효율적인 코딩과 컨벤션을 유지할 수 있을 때까지
+6. 해당 과정을 반복  
+-> 자바스크립트 문법에 적응 & 효율적인 코딩과 컨벤션을 유지할 수 있을 때까지
 
 <br>
 
