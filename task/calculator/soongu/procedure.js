@@ -15,12 +15,12 @@ function init() {
 }
 
 function run() {
-    const first = parseInt((inputTxt.value.split(' '))[0]);
-    const second = parseInt(inputTxt.value.split(' ')[2]);
+    const first = parseFloat((inputTxt.value.split(' '))[0]);
+    const second = parseFloat(inputTxt.value.split(' ')[2]);
     const op = inputTxt.value.split(' ')[1];
     exit();
     if (!isNaN(calculate(first, second, op))) {
-      resultSpace.innerHTML = calculate(first, second, op);
+      resultSpace.innerHTML = (Math.round((calculate(first, second, op))*100)/100.0);
     } else {
       resultSpace.innerHTML = "입력이 잘못되었습니다.";
     }
