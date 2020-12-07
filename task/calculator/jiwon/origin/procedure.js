@@ -7,8 +7,8 @@ const inputTxt = document.querySelector("#input-txt"),
   resetBtn = document.querySelector("#reset");
 
 
-let result = 0,
-  middle = 0
+let result = 0;
+  
   
   
 
@@ -24,7 +24,6 @@ function run() {
   }else {
     resultSpace.innerHTML = changeArray(inputTxt);
     result = 0;
-    
   }
 }
 
