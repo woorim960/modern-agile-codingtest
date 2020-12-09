@@ -16,15 +16,49 @@ function run() {
   
   if(inputTxt.value.toString() === 'exit') {
     resultSpace.innerHTML = "종료";
-    
   }else {
-    resultSpace.innerHTML = arithmetic(inputTxt);
+    resultSpace.innerHTML = playArithmetic(inputTxt);
   }
+
 }
 
-function arithmetic(string){
-  let result = eval(string.value);
-  return result;
+function playArithmetic(string){
+  const ops = ['*', '/', '+', '-'] ;
+  let str = string.value;
+  let idx, middleResult ;
+  for (let op of ops) {
+    while (str.includes(op)) {
+      idx = str.indexOf(op); 
+      middleResult = calculator(str[idx - 1],op, str[idx + 1]);
+      console.log(middleResult);
+      str = str.replace(str.substr(str.indexOf(op) -1, 3), middleResult) ;
+      console.log(str);
+      if (str.includes(op)){
+      }else {
+        break;
+      }
+    }
+  }
+  return str;
+}
+
+function calculator(first, op, second){
+  first = parseFloat(first);
+  second = parseFloat(second);
+  if (op.includes('*')){
+    let result = first * second ;
+    return result ;
+  } else if (op.includes('/')) {
+    let result = first / second ;
+    return result ;
+  } else if (op.includes('+')) {
+    let result = first + second ;
+    return result ;
+  } else if (op.includes('-')) {
+    let result = first - second ;
+    return result ;
+  } 
 }
 
 init();
+
