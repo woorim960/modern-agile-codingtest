@@ -4,7 +4,7 @@
 const inputTxt = document.querySelector("#input-txt"),
   btnCalc = document.querySelector("#calc"),
   resultSpace = document.querySelector("#result"); // resultSpace.innerHTML = "결과를 출력할 값" ->
-                                                    // 이와 같은 식으로 결과를 출력하면 됨.
+// 이와 같은 식으로 결과를 출력하면 됨.
 
 function init() {
   /*
@@ -15,49 +15,56 @@ function init() {
 }
 
 function run() {
-   let ops = ['+', '-', '*', '/', '%'];
-   let first;
-   let second;
-   for (let op of ops) {
-      first = Number(inputTxt.value.split(op)[0]);
-      second = Number(inputTxt.value.split(op)[1]);
-     if(inputTxt.value.includes(op)) {
-        if (!isNaN(calculate(first, second, op))) {
-          resultSpace.innerHTML = (Math.round((calculate(first, second, op))*100)/100.0);
-        } else {
-          resultSpace.innerHTML = "입력이 잘못되었습니다.";
-        }
+  let ops = ["+", "-", "*", "/", "%"];
+  let first;
+  let second;
+
+  let text = inputTxt.value;
+  for (let op of ops) {
+    arr = text.split(op);
+    first = Number(arr[0]);
+    second = Number(arr[1]);
+
+    if (text.includes(op)) {
+      calc = calculate(first, second, op);
+      if (!isNaN(calc)) {
+        resultSpace.innerHTML = Math.round(calc * 100) / 100.0;
+      } else {
+        resultSpace.innerHTML = "입력이 잘못되었습니다.";
       }
-   }
+    }
+  }
+
+  if (text === "exit") {
     exit();
+  }
 }
 
 function calculate(first, second, op) {
   switch (op) {
-    case '+' :
-        return Number(first + second);
-        break;
-    case '-' :
-        return Number(first - second);
-        break;
-    case '/' :
-        return first / second;
-        break;
-    case '*' :
-        return first * second;
-        break;
-    case '%' :
-        return first % second;
-        break;
-    default :
-        throw Error('Unknown command')
-        break;
-    }
-};
+    case "+":
+      return first + second;
+      break;
+    case "-":
+      return first - second;
+      break;
+    case "/":
+      return first / second;
+      break;
+    case "*":
+      return first * second;
+      break;
+    case "%":
+      return first % second;
+      break;
+    default:
+      throw Error("Unknown command");
+      break;
+  }
+}
 
 function exit() {
-  if (inputTxt.value === "exit") 
-    alert ("종료");
+  alert("종료");
 }
 
 init();

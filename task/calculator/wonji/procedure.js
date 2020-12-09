@@ -13,17 +13,15 @@ function init() {
 }
 
 function run() {
-  
-  if(inputTxt.value.toString() === 'exit') {
+  if (inputTxt.value.toString() === "exit") {
     resultSpace.innerHTML = "종료";
-    
-  }else {
-    resultSpace.innerHTML = arithmetic(inputTxt);
+  } else {
+    resultSpace.innerHTML = playArithmetic(inputTxt);
   }
 }
 
-function arithmetic(string){
-  let result = eval(string.value);
+function playArithmetic(string) {
+  let result = eval("");
   return result;
 }
 
