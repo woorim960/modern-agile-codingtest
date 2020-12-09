@@ -15,27 +15,14 @@ function init() {
 }
 
 function run() {
-  let ops = ["+", "-", "*", "/", "%"];
-  let first;
-  let second;
-
-  let text = inputTxt.value;
-  for (let op of ops) {
-    arr = text.split(op);
-    first = Number(arr[0]);
-    second = Number(arr[1]);
-
-    if (text.includes(op)) {
-      calc = calculate(first, second, op);
-      if (!isNaN(calc)) {
-        resultSpace.innerHTML = Math.round(calc * 100) / 100.0;
-      } else {
-        resultSpace.innerHTML = "입력이 잘못되었습니다.";
-      }
-    }
-  }
-
-  if (text === "exit") {
+  const ops = ['*', '/', '-', '+', '%'];
+  const input = inputTxt.value;
+  let arr = strToarr(input);
+  delSpace(arr);
+  firstSub(arr);
+  arrSlice(ops, arr);
+  output(arr);
+  if (input === "exit") {
     exit();
   }
 }
@@ -61,6 +48,45 @@ function calculate(first, second, op) {
       throw Error("Unknown command");
       break;
   }
+}
+
+function strToarr(input) {
+  return input.replace(/[*\-+\/%]/g, " $& ").split(" ");
+}
+
+function delSpace(arr) {
+    let idx;
+    while (arr.includes("")) {
+      idx = arr.indexOf("");
+      arr.splice(idx, 1);
+    }
+    return arr;
+}
+
+function arrSlice(ops, arr) {
+  let idx;
+  for (let op of ops) {
+    while (arr.includes(op)) {
+      idx = arr.indexOf(op);
+      arr.splice(idx - 1, 3, calculate(parseFloat(arr[idx - 1]), parseFloat(arr[idx + 1]), op));
+    }
+  }
+  return arr;
+}
+
+function output(arr) {
+  if (!isNaN(arr)) {
+    resultSpace.innerHTML = Math.round(arr * 100) / 100.0;
+  } else {
+    resultSpace.innerHTML = "입력이 잘못되었습니다.";
+  }
+}
+
+function firstSub(arr) {
+  if (arr[0] === "-") {
+    arr.splice(0, 2, arr[1] * (-1));
+  }
+  return arr;
 }
 
 function exit() {
