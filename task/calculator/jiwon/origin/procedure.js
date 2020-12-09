@@ -6,8 +6,7 @@ const inputTxt = document.querySelector("#input-txt"),
   resultSpace = document.querySelector("#result"), // resultSpace.innerHTML = "결과를 출력할 값" -> 이와 같은 식으로 결과를 출력하면 됨.
   resetBtn = document.querySelector("#reset");
 
-let result = 0,
-  middle = 0;
+let result = 0;
 
 function init() {
   btnCalc.addEventListener("click", run); // 버튼을 클릭하면 run() 함수가 실행된다.
@@ -43,7 +42,7 @@ function changeArray(string) {
     while (changeString.includes(op)) {
 
       if (changeString.includes(op)) {
-        changeString = cals (changeString, op);
+        changeString = calc (changeString, op);
 
         if (changeString.includes('-')) {
           break;
@@ -54,7 +53,7 @@ function changeArray(string) {
   return changeString;
 }
 
-function cals (changeString, op) {
+function calc (changeString, op) {
   switch (op) {
     case "*" :
       changeString = mul(changeString);
@@ -70,6 +69,13 @@ function cals (changeString, op) {
       break;
   }
   return changeString;
+}
+
+function calc(op) {
+  switch (op) {
+    case "*":
+      mul();
+  }
 }
 
 function reset() {
