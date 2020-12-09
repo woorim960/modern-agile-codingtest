@@ -15,24 +15,30 @@ function init() {
 }
 
 function run() {
-    const first = parseFloat((inputTxt.value.split(' '))[0]);
-    const second = parseFloat(inputTxt.value.split(' ')[2]);
-    const op = inputTxt.value.split(' ')[1];
+   let ops = ['+', '-', '*', '/', '%'];
+   let first;
+   let second;
+   for (let op of ops) {
+      first = Number(inputTxt.value.split(op)[0]);
+      second = Number(inputTxt.value.split(op)[1]);
+     if(inputTxt.value.includes(op)) {
+        if (!isNaN(calculate(first, second, op))) {
+          resultSpace.innerHTML = (Math.round((calculate(first, second, op))*100)/100.0);
+        } else {
+          resultSpace.innerHTML = "입력이 잘못되었습니다.";
+        }
+      }
+   }
     exit();
-    if (!isNaN(calculate(first, second, op))) {
-      resultSpace.innerHTML = (Math.round((calculate(first, second, op))*100)/100.0);
-    } else {
-      resultSpace.innerHTML = "입력이 잘못되었습니다.";
-    }
 }
 
 function calculate(first, second, op) {
   switch (op) {
     case '+' :
-        return first + second;
+        return Number(first + second);
         break;
     case '-' :
-        return first - second;
+        return Number(first - second);
         break;
     case '/' :
         return first / second;
