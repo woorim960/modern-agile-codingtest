@@ -18,11 +18,45 @@ function run() {
   } else {
     resultSpace.innerHTML = playArithmetic(inputTxt);
   }
+
 }
 
-function playArithmetic(string) {
-  let result = eval("");
-  return result;
+function playArithmetic(string){
+  const ops = ['*', '/', '+', '-'] ;
+  let str = string.value;
+  let idx, middleResult ;
+  for (let op of ops) {
+    while (str.includes(op)) {
+      idx = str.indexOf(op); 
+      middleResult = calculator(str[idx - 1],op, str[idx + 1]);
+      console.log(middleResult);
+      str = str.replace(str.substr(str.indexOf(op) -1, 3), middleResult) ;
+      console.log(str);
+      if (str.includes(op)){
+      }else {
+        break;
+      }
+    }
+  }
+  return str;
+}
+
+function calculator(first, op, second){
+  first = parseFloat(first);
+  second = parseFloat(second);
+  if (op.includes('*')){
+    let result = first * second ;
+    return result ;
+  } else if (op.includes('/')) {
+    let result = first / second ;
+    return result ;
+  } else if (op.includes('+')) {
+    let result = first + second ;
+    return result ;
+  } else if (op.includes('-')) {
+    let result = first - second ;
+    return result ;
+  } 
 }
 
 init();
