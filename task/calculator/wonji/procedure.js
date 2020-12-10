@@ -13,10 +13,9 @@ function init() {
 }
 
 function run() {
-  
-  if(inputTxt.value.toString() === 'exit') {
+  if (inputTxt.value.toString() === "exit") {
     resultSpace.innerHTML = "종료";
-  }else {
+  } else {
     resultSpace.innerHTML = playArithmetic(inputTxt);
   }
 
@@ -61,4 +60,3 @@ function calculator(first, op, second){
 }
 
 init();
-
