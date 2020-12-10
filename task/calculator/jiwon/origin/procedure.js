@@ -15,21 +15,58 @@ function init() {
 
 function run() {
   if (inputTxt.value.toString() === "exit") {
-    resultSpace.innerHTML = "종료";
-  } else {
+    exit ("종료");
+  } else if(isNaN(changeArray(inputTxt))) {
+    exit("잘못된입력");
+  }else {
     resultSpace.innerHTML = changeArray(inputTxt);
-    result = 0;
+    result = 0; 
   }
 }
 
+function exit (str) {
+  inputTxt.parentNode.removeChild(inputTxt);
+  btnCalc.parentNode.removeChild(btnCalc);
+  resetBtn.parentNode.removeChild(resetBtn);
+  let heading = document.createElement("h1");
+  let headingTxt = document.createTextNode(str);
+  heading.appendChild(headingTxt);
+  document.body.appendChild(heading);
+}
+
 function changeArray(string) {
+  const operators = ['*', '/', '+', '-'];
   let changeString = string.value;
+  
   for (let op of operators) {
     while (changeString.includes(op)) {
+
       if (changeString.includes(op)) {
-        changeString = calc(changeString);
+        changeString = calc (changeString, op);
+
+        if (changeString.includes('-')) {
+          break;
+        }
       }
     }
+  } 
+  return changeString;
+}
+
+function calc (changeString, op) {
+  switch (op) {
+    case "*" :
+      changeString = mul(changeString);
+      break;
+    case "/" :
+      changeString = div(changeString);
+      break;
+    case "+" :
+      changeString = add(changeString);
+      break;
+    case "-" :
+      changeString = sub(changeString);
+      break;
   }
   return changeString;
 }
@@ -47,110 +84,90 @@ function reset() {
 }
 
 function add(string) {
-  const operators = ["*", "/", "+", "-"];
-  const comma = ",";
-  for (let op of operators) {
-    string.split(op).join(comma);
+  const opers = ['*', '/', '-'];
+  const coma = ",";
+  let arr,addArr;
+  for (let op of opers) {
+    arr = string.split(op).join(coma);
   }
+  arr = arr.split(coma);
 
-  let array = string
-    .split("/")
-    .join(",")
-    .split("-")
-    .join(",")
-    .split("*")
-    .join(",")
-    .split(","); //+를 가진 문자열만 고름
-  let addArr;
-  for (let seq = 0; seq < array.length; seq++) {
-    if (array[seq].includes("+")) {
+  for (let seq = 0; seq < arr.length; seq++) {
+    if (arr[seq].includes("+")) {
       //+있는지 한번 더 확인
-      addArr = array[seq].split("+"); //+기준으로 나눔
+      addArr = arr[seq].split("+"); //+기준으로 나눔
       result = 0;
       addArr.forEach(function (ele) {
         result += parseFloat(ele);
-        return result;
       });
+      string = string.replace(arr[seq], result); //문자열자리에 result값 넣어줌
     }
-    string = string.replace(array[seq], result); //문자열자리에 result값 넣어줌
   }
   return string;
 }
 
 function sub(string) {
-  let array = string
-    .split("+")
-    .join(",")
-    .split("/")
-    .join(",")
-    .split("*")
-    .join(",")
-    .split(",");
-
-  let subArr;
-  함수();
-
-  return string;
-}
-
-function 함수() {
-  for (let seq = 0; seq < array.length; seq++) {
-    if (array[seq].includes("-")) {
-      subArr = array[seq].split("-");
+  const opers = ['*', '/', '+'];
+  const coma = ",";
+  let arr,subArr;
+  for (let op of opers) {
+    arr = string.split(op).join(coma);
+  }
+  arr = arr.split(coma);
+  
+  for (let seq = 0; seq < arr.length; seq++) {
+    if (arr[seq].includes("-")) {
+      subArr = arr[seq].split("-");
       result = (parseFloat(subArr[0]) * 2).toString();
-      subArr.forEach((ele) => {
+      subArr.forEach(ele => {
         result -= parseFloat(ele);
         return result;
       });
-
-      string = string.replace(array[seq], result);
+      string = string.replace(arr[seq], result);
     }
   }
+  return string;
 }
 
 function div(string) {
-  let array = string
-    .split("+")
-    .join(",")
-    .split("-")
-    .join(",")
-    .split("*")
-    .join(",")
-    .split(",");
-  let divArr;
-  for (let seq = 0; seq < array.length; seq++) {
-    if (array[seq].includes("/")) {
-      divArr = array[seq].split("/");
+  const opers = ['*', '+', '-'];
+  const coma = ",";
+  let arr,divArr;
+  for (let op of opers) {
+    arr = string.split(op).join(coma);
+  }
+  arr = arr.split(coma);
+  for (let seq = 0; seq < arr.length; seq++) {
+    if (arr[seq].includes("/")) {
+      divArr = arr[seq].split("/");
       result = parseFloat(divArr[0]); //나누기할 때 0값은 undefined
       for (let divSeq = 1; divSeq < divArr.length; divSeq++) {
         result = result / parseFloat(divArr[divSeq]);
       }
-      string = string.replace(array[seq], result.toFixed(1));
+      string = string.replace(arr[seq], result.toFixed(1));
     }
   }
   return string; //소수점x 반올림해서 계산
 }
 
 function mul(string) {
-  let array = string
-    .split("+")
-    .join(",")
-    .split("-")
-    .join(",")
-    .split("/")
-    .join(",")
-    .split(",");
-  let mulArray;
-  for (let seq = 0; seq < array.length; seq++) {
-    if (array[seq].includes("*")) {
-      mulArray = array[seq].split("*");
+  const opers = ['+', '/', '-'];
+  const coma = ",";
+  let arr,mulArr;
+  for (let op of opers) {
+    arr = string.split(op).join(coma);
+  }
+  arr = arr.split(coma);
+
+  for (let seq = 0; seq < arr.length; seq++) {
+    if (arr[seq].includes("*")) {
+      mulArr = arr[seq].split("*");
       result = 1; //곱하기할 때 0값은 undefined
-      mulArray.forEach(function (ele) {
+      mulArr.forEach(ele => {
         result *= parseFloat(ele);
-        console.log(result);
         return result;
       });
-      string = string.replace(array[seq], result);
+      string = string.replace(arr[seq], result);
     }
   }
   return string;
