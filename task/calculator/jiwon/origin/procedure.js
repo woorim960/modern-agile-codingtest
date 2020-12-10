@@ -25,93 +25,91 @@ function run() {
 }
 
 function exit (str) {
-  inputTxt.parentNode.removeChild(inputTxt);
-  btnCalc.parentNode.removeChild(btnCalc);
-  resetBtn.parentNode.removeChild(resetBtn);
+  remove (inputTxt);
+  remove (btnCalc);
+  remove (resetBtn);
+  remove (resultSpace);
   let heading = document.createElement("h1");
   let headingTxt = document.createTextNode(str);
   heading.appendChild(headingTxt);
   document.body.appendChild(heading);
 }
 
+function remove (str) {
+  return str.parentNode.removeChild(str);
+}
+//입력 버튼 시 실행 함수
 function changeArray(string) {
   const operators = ['*', '/', '+', '-'];
-  let changeString = string.value;
-  
+  let changeStr = string.value;
+
   for (let op of operators) {
-    while (changeString.includes(op)) {
-
-      if (changeString.includes(op)) {
-        changeString = calc (changeString, op);
-
-        if (changeString.includes('-')) {
-          break;
-        }
+    while (changeStr.includes(op)){
+      
+      if (changeStr.includes(op)){
+        changeStr = calc(changeStr, op);
+      }
+      if (changeStr.includes('-')) {
+        break;
       }
     }
   } 
-  return changeString;
+  return changeStr;
 }
-
-function calc (changeString, op) {
+//계산처리
+function calc (changeStr, op) {
   switch (op) {
     case "*" :
-      changeString = mul(changeString);
-      break;
+      changeStr = mul(changeStr);
     case "/" :
-      changeString = div(changeString);
-      break;
+      changeStr = div(changeStr);
     case "+" :
-      changeString = add(changeString);
-      break;
+      changeStr = add(changeStr);
     case "-" :
-      changeString = sub(changeString);
+      changeStr = sub(changeStr);
+    default:
       break;
   }
-  return changeString;
+  return changeStr;
 }
 
-function calc(op) {
-  switch (op) {
-    case "*":
-      mul();
-  }
-}
 
+//reset버튼 누를시
 function reset() {
   inputTxt.value = "";
   resultSpace.innerHTML = "";
 }
 
-function add(string) {
+
+function add(str) {
   const opers = ['*', '/', '-'];
   const coma = ",";
-  let arr,addArr;
+  let addArr, arr = str;
+
   for (let op of opers) {
-    arr = string.split(op).join(coma);
+    arr = arr.split(op).join(coma);
   }
   arr = arr.split(coma);
-
   for (let seq = 0; seq < arr.length; seq++) {
     if (arr[seq].includes("+")) {
-      //+있는지 한번 더 확인
       addArr = arr[seq].split("+"); //+기준으로 나눔
       result = 0;
       addArr.forEach(function (ele) {
         result += parseFloat(ele);
       });
-      string = string.replace(arr[seq], result); //문자열자리에 result값 넣어줌
+      str = str.replace(arr[seq], result); //문자열자리에 result값 넣어줌
     }
   }
-  return string;
+  return str;
 }
 
-function sub(string) {
+function sub(str) {
   const opers = ['*', '/', '+'];
   const coma = ",";
-  let arr,subArr;
+  let subArr, arr =str;
+  
   for (let op of opers) {
-    arr = string.split(op).join(coma);
+    arr = arr.split(op).join(coma);
   }
   arr = arr.split(coma);
   
@@ -123,18 +121,19 @@ function sub(string) {
         result -= parseFloat(ele);
         return result;
       });
-      string = string.replace(arr[seq], result);
+      str = str.replace(arr[seq], result);
     }
   }
-  return string;
+  return str;
 }
 
-function div(string) {
+function div(str) {
   const opers = ['*', '+', '-'];
   const coma = ",";
-  let arr,divArr;
+  let divArr, arr = str;
+
   for (let op of opers) {
-    arr = string.split(op).join(coma);
+    arr = arr.split(op).join(coma);
   }
   arr = arr.split(coma);
   for (let seq = 0; seq < arr.length; seq++) {
@@ -144,18 +143,19 @@ function div(string) {
       for (let divSeq = 1; divSeq < divArr.length; divSeq++) {
         result = result / parseFloat(divArr[divSeq]);
       }
-      string = string.replace(arr[seq], result.toFixed(1));
+      str = str.replace(arr[seq], result.toFixed(1));
     }
   }
-  return string; //소수점x 반올림해서 계산
+  return str; //소수점x 반올림해서 계산
 }
 
-function mul(string) {
+function mul(str) {
   const opers = ['+', '/', '-'];
   const coma = ",";
-  let arr,mulArr;
+  let mulArr, arr = str;
+
   for (let op of opers) {
-    arr = string.split(op).join(coma);
+    arr = arr.split(op).join(coma);
   }
   arr = arr.split(coma);
 
@@ -163,14 +163,15 @@ function mul(string) {
     if (arr[seq].includes("*")) {
       mulArr = arr[seq].split("*");
       result = 1; //곱하기할 때 0값은 undefined
+
       mulArr.forEach(ele => {
         result *= parseFloat(ele);
         return result;
       });
-      string = string.replace(arr[seq], result);
+      str = str.replace(arr[seq], result);
     }
   }
-  return string;
+  return str;
 }
 
 init();
