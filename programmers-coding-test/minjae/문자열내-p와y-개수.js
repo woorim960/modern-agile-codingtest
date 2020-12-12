@@ -4,10 +4,10 @@ function solution(s){
      let pCounter, yCounter;
      pCounter = yCounter = 0;
     
-     for (let i = 0; i < lowerString.length; i++){
-         if(lowerString[i].includes('p')) {
+     for (let i = 0; i < lowerString.length; i++) {
+         if (lowerString[i].includes('p')) {
              pCounter++;
-         } else if(lowerString[i].includes('y')){
+         } else if (lowerString[i].includes('y')) {
              yCounter++;
          } 
      }
