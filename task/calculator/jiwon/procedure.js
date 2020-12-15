@@ -14,12 +14,13 @@ function init() {
 }
 
 function run() {
-  if (inputTxt.value.toString() === "exit") {
-    exit ("종료");
-  } else if(isNaN(changeArray(inputTxt))) {
+  const string = inputTxt.value;
+  if (string === "exit") {
+    exit("종료");
+  } else if(isNaN(changeArray(string))) {
     exit("잘못된입력");
   }else {
-    resultSpace.innerHTML = changeArray(inputTxt);
+    resultSpace.innerHTML = changeArray(string);
     result = 0; 
   }
 }
@@ -41,11 +42,9 @@ function remove (str) {
 //입력 버튼 시 실행 함수
 function changeArray(string) {
   const operators = ['*', '/', '+', '-'];
-  let changeStr = string.value;
 
   for (let op of operators) {
     while (changeStr.includes(op)){
-      
       if (changeStr.includes(op)){
         changeStr = calc(changeStr, op);
       }

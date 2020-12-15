@@ -46,7 +46,7 @@ function calculate(first, second, op) {
       return first % second;
       break;
     default:
-      throw Error("Unknown command");
+      throw Error("알 수 없는 커맨드입니다.");
       break;
   }
 }
