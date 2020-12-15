@@ -1,7 +1,5 @@
 function solution(d, budget) {
-    const sortDArr = d.sort((a,b) => {
-        return a - b;
-    });
+    const sortDArr = d.sort((a,b) => a - b);
     let count = 0;
     sortDArr.forEach(ele => {
         budget -= ele;
