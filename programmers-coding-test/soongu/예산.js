@@ -4,9 +4,7 @@ function solution(d, budget) {
     for (let i = 0; i < d.length; i++) {
         for (let j = i + 1; j < d.length; j++) {
             if (d[i] > d[j]) {
-                temp = d[i];
-                d[i] = d[j];
-                d[j] = temp;
+                { d[j], d[i] } = { d[i], d[j] };
             }
         }
     } // 정렬 알고리즘
