@@ -18,9 +18,9 @@ function run() {
   const input = inputTxt.value;
 
   let arr = strToarr(input);
-  deleteSpace(arr);
-  negativeStart(arr);
-  arraySlice(ops, arr);
+  arr = deleteSpace(arr);
+  arr = startNegative(arr);
+  arr = arraySlice(ops, arr);
   output(arr);
 
   if (input === "exit") {
@@ -64,7 +64,7 @@ function deleteSpace(arr) {
     return arr;
 }
 
-function negativeStart(arr) {
+function startNegative(arr) {
   if (arr[0] === "-") {
     arr.splice(0, 2, arr[1] * (-1));
   }
