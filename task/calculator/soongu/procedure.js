@@ -20,6 +20,7 @@ function run() {
   let arr = strToarr(input);
   arr = deleteSpace(arr);
   arr = startNegative(arr);
+  arr = removeDuplicateOperator(arr, ops);
   arr = arraySlice(ops, arr);
   output(arr);
 
@@ -67,6 +68,21 @@ function deleteSpace(arr) {
 function startNegative(arr) {
   if (arr[0] === "-") {
     arr.splice(0, 2, arr[1] * (-1));
+  }
+  return arr;
+}
+
+function removeDuplicateOperator(arr,ops) {
+  let idx;
+  for (let val of arr) {
+    if (ops.includes(val)) {
+      idx = arr.indexOf(val);  
+      if (arr[idx + 1] === '-') {  
+        arr.splice(idx + 1, 2, (-1) * arr[idx + 2]);
+      } else if (arr[idx + 1] === '+') {
+        arr.splice(idx + 1, 2, arr[idx + 2]);
+      }
+    }
   }
   return arr;
 }
