@@ -10,32 +10,20 @@ function init() {
   /*
    * 초기 실행 함수
    */
-
   btnCalc.addEventListener("click", run); // 버튼을 클릭하면 run() 함수가 실행된다.
 }
 
 function run() {
-  let ops = ["+", "-", "*", "/", "%"];
-  let first;
-  let second;
+  const ops = ['*', '/', '-', '+', '%'];
+  const input = inputTxt.value;
 
-  let text = inputTxt.value;
-  for (let op of ops) {
-    arr = text.split(op);
-    first = Number(arr[0]);
-    second = Number(arr[1]);
+  let arr = strToarr(input);
+  arr = deleteSpace(arr);
+  arr = startNegative(arr);
+  arr = arraySlice(ops, arr);
+  output(arr);
 
-    if (text.includes(op)) {
-      calc = calculate(first, second, op);
-      if (!isNaN(calc)) {
-        resultSpace.innerHTML = Math.round(calc * 100) / 100.0;
-      } else {
-        resultSpace.innerHTML = "입력이 잘못되었습니다.";
-      }
-    }
-  }
-
-  if (text === "exit") {
+  if (input === "exit") {
     exit();
   }
 }
@@ -58,8 +46,49 @@ function calculate(first, second, op) {
       return first % second;
       break;
     default:
-      throw Error("Unknown command");
+      throw Error("알 수 없는 커맨드입니다.");
       break;
+  }
+}
+
+function strToarr(input) {
+  return input.replace(/[*\-+\/%]/g, " $& ").split(" ");
+}
+
+function deleteSpace(arr) {
+    let idx;
+    while (arr.includes("")) {
+      idx = arr.indexOf("");
+      arr.splice(idx, 1);
+    }
+    return arr;
+}
+
+function startNegative(arr) {
+  if (arr[0] === "-") {
+    arr.splice(0, 2, arr[1] * (-1));
+  }
+  return arr;
+}
+
+function arraySlice(ops, arr) {
+  let idx;
+  for (let op of ops) {
+    while (arr.includes(op)) {
+      idx = arr.indexOf(op);
+      arr.splice(idx - 1, 3, calculate(parseFloat(arr[idx - 1]), parseFloat(arr[idx + 1]), op));
+    }
+  }
+  return arr;
+}
+
+function output(arr) {
+  if (!isNaN(arr)) {
+    resultSpace.innerHTML = Math.round(arr * 100) / 100.0;
+  } else {
+    resultSpace.innerHTML = "입력이 잘못되었습니다.";
+    inputTxt.parentNode.removeChild(inputTxt);
+    btnCalc.parentNode.removeChild(btnCalc);
   }
 }
 
