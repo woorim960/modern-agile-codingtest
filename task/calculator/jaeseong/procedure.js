@@ -14,10 +14,28 @@ function init() {
 
 function run() {
   let arr = inputTxt.value.replace(/[-*\+\/%]/g, " $& ").split(" ");
-  deleteEmpty(arr);
-  subtractFirstNum(arr);
-  sliceArray(OPERATION, arr);
+  arr = deleteEmpty(arr);
+  arr = subtractFirstNum(arr);
+  arr = processMinusNum(arr);
+  arr = sliceArray(OPERATION, arr);
 
+  print(arr);
+}
+
+function processMinusNum(arr) {
+  let idx;
+  for (let val of arr) {
+    if (val === "-") {
+       idx = arr.indexOf(val);
+       if (OPERATION.includes(arr[idx - 1])) {
+          arr.splice(idx, 2, val + arr[idx + 1]);
+       }
+    }
+  }
+  return arr;
+}
+
+function print(arr) {
   if (inputTxt.value === "exit") {
     exit();
   }
