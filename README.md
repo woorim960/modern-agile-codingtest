@@ -15,7 +15,7 @@
    - **전순구** <[JeonSoongu](https://github.com/JeonSoongu)>
       - 블로그 : https://blog.naver.com/pk3669
    - **전상준** <[jsj1510](https://github.com/jsj1510)>
-      - 블로그 :
+      - 블로그 : https://blog.naver.com/tw4504
    - **김지원** <[kimjiwonpg98](https://github.com/kimjiwonpg98)>
       - 블로그 : https://kimjiwon98.tistory.com/ 
    - **정원지** <[JeongWonji](https://github.com/JeongWonji)>
