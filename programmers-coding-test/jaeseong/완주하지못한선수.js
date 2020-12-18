@@ -5,9 +5,9 @@ function solution(participant, completion) {
     for (let name of participant) {
         if (checkObj[name] === undefined) {           
             checkObj[name] = 1;
-        } else {
-            checkObj[name] += 1;
+            continue;
         }
+        checkObj[name] += 1;
     }
     
     for (let name of completion) {
@@ -22,5 +22,6 @@ function solution(participant, completion) {
             break;
         }
     }
-  return answer;
+    
+    return answer;
 }
