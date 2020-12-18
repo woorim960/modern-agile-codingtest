@@ -3,8 +3,6 @@ function solution(n) {
     let answer = 0;
     
     let sum ='';
-    reverseTernary.forEach(n => {
-        sum += n;
-    })
+    reverseTernary.forEach(n => sum += n);
     return answer = parseInt(sum, 3);
 }
