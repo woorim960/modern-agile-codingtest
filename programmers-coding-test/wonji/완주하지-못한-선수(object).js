@@ -4,7 +4,7 @@ function solution(participant, completion) {
         name2 : completion.sort()
     };
    
-    for(let i=0; i<ob.name1.length; i++){
+    for(let i=0; i < ob.name1.length; i++){
         if(ob.name1[i] !== ob.name2[i]){   
             return ob.name1[i];
         }
