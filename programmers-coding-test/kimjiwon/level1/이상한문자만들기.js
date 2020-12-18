@@ -1,3 +1,5 @@
+'use strict';
+
 function solution(s) {
     const midArr = [];
     const finArr = [];
