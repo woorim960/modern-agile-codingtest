@@ -13,7 +13,7 @@
    - **고재성** <[jstkcoder](https://github.com/jstkcoder)>
       - 블로그 : https://blog.naver.com/dwc2206
    - **전순구** <[JeonSoongu](https://github.com/JeonSoongu)>
-      - 블로그 : 
+      - 블로그 : https://blog.naver.com/pk3669
    - **전상준** <[jsj1510](https://github.com/jsj1510)>
       - 블로그 :
    - **김지원** <[kimjiwonpg98](https://github.com/kimjiwonpg98)>
