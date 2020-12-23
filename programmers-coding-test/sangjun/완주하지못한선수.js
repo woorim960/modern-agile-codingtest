@@ -1,11 +1,21 @@
 function solution(participant, completion) {
-    participant.sort();
-    completion.sort();
+    const obj = {};
     
+    for (let participants of participant) {
+        if (participants in obj) {
+            obj[participants] += 1;
+        } else {
+            obj[participants] = 1;
+        }
+    }
     
-    for(let participants in participant){
-         if (participant[participants] !== completion[participants]) {
-           return participant[participants];
+    for (let completions of completion) {
+         obj[completions] -= 1;
+    }
+    
+    for (let participants of participant) {
+        if (obj[participants] >= 1) {
+            return participants;
         }
     }
 }
