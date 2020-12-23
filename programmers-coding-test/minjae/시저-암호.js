@@ -3,7 +3,7 @@ function solution(s, n) {
     
     let result = '';
     for (let i = 0; i < s.length; i++) {
-        const ascii = arr[i].charCodeAt();
+        const ascii = arr[i].charCodeAt();   // 반복문 안에서의 변수 선언은 좋지 않습니다!ㅎㅎ
         
         if (arr[i] == ' ') {
             result += ' ';
