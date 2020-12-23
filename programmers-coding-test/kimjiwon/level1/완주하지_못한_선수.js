@@ -1,19 +1,19 @@
 function solution(participant, completion) {
     const obj = {};
     for (let player of participant) {
-        if (obj[player]) {
+        if (player in obj) {
             obj[player] += 1;       //객체에 있으면 키의 값에 1추가
-        }else {
+        } else {
             obj[player] = 1;
         }
     }
+    
     for (let finisher of completion) {
-        if (obj[finisher]) {
-            obj[finisher] -=1;          //해당 키의 값을 -1
-        }
+         obj[finisher] -= 1;          //해당 키의 값을 -1
     }
+    
     for (let player of participant) {
-        if (obj[player] === 1) { 
+        if (obj[player] === 1) {
             return player;
         }
     }
