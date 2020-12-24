@@ -40,7 +40,7 @@ function remove (str) {
   return str.parentNode.removeChild(str);
 }
 //입력 버튼 시 실행 함수
-function changeArray(string) {
+function changeArray(changeStr) {
   const operators = ['*', '/', '+', '-'];
 
   for (let op of operators) {
