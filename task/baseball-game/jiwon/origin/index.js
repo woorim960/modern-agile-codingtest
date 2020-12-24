@@ -22,6 +22,24 @@ function comSet(comPick) {
   return comPick;
 }
 
+function error() {
+  alert('다시 입력해주세요!');
+  input.value = '';
+}
+
+function errorSituation(userInputNumbers, userNumArr) {
+  let delOverlap = new Set(userNumArr);
+  if (isNaN(userInputNumbers)) {
+    error();
+  }
+  if ((userInputNumbers % 1000) != userInputNumbers) {
+      error();
+  }
+  if (userNumArr !== [...delOverlap]) {
+      error();
+  }
+}
+
 
 
 
