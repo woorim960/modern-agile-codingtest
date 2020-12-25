@@ -20,7 +20,6 @@ class BaseballGame {
     //게임초기화
     gameInit() {
       this.setRandomNumbers();
-      this.resultSection.innerHTML = '';
     }
 
     //랜덤 숫자 셋팅
@@ -34,13 +33,15 @@ class BaseballGame {
         }
       }
       this.computerInputNumbers = randomNumbers.join('');
-
+      
       console.log(this.computerInputNumbers);
     }
 
     //사용자 입력 값 가져오기
     handleUserInput = e => {
+      this.userInputNumbers = e.target.value;
 
+      console.log(this.userInputNumbers);
     }
 
     //사용자 입력 값 유효성 검사
