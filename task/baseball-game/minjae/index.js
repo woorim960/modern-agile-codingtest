@@ -12,7 +12,31 @@ export default class BaseballGame {
 
         this.gameInit()
     }
+    //게임초기화
+    gameInit() {
+      this.setRandomNumber();
+      this.resultSection.innerHTML = '';
+    }
+    //랜덤 숫자 셋팅
+    setRandomNumber() {
+      
+    }
+    //사용자 입력 값
+    handleUserInput = e => {
 
+    }
+    //사용자 입력 값 유효성 검사
+    numberValidate() {
+
+    }
+    
+    onConfirm = () => {
+
+    }
+    //카운터 체크
+    onCounterCheck = () => {
+
+    }
     play(computerInputNumbers, userInputNumbers) {
       return "결과 값 String";
     }
