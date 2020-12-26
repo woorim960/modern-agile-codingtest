@@ -5,8 +5,8 @@ const NOTHING_MESSAGE = '😥 NOTHING 😥';
 
 export const onResultShow = (result, restart) => {
     const { ballCount, strikeCount } = result;
-    let resultMessage = '';
     
+    let resultMessage = '';
     if (ballCount === 0 && strikeCount === 0) {
         resultMessage = NOTHING_MESSAGE;
     }
