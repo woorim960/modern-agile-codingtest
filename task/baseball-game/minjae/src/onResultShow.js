@@ -3,7 +3,7 @@ const resultSection = document.querySelector('#result');
 const SUCCESS_MESSAGE = '🎉 CONGRATULATION!! 🎉';
 const NOTHING_MESSAGE = '😥 NOTHING 😥';
 
-export const onResultShow = (result, gameInit) => {
+export const onResultShow = (result, restart) => {
     const { ballCount, strikeCount } = result;
     let resultMessage = '';
     
@@ -11,13 +11,13 @@ export const onResultShow = (result, gameInit) => {
         resultMessage = NOTHING_MESSAGE;
     }
     if (ballCount !== 0) {
-        resultMessage = `볼 카운트: ${ballCount}, `;
+        resultMessage = `볼 카운트: ${ballCount}  `;
     }
     if (strikeCount !== 0) {
         resultMessage += `스트라이크 카운트: ${strikeCount} `;
         if(strikeCount === 3) {
             resultMessage = SUCCESS_MESSAGE;
-            gameInit();
+            restart();
         }
     } 
     resultSection.innerHTML = resultMessage;

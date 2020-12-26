@@ -19,7 +19,7 @@ export default class BaseballGame {
       this.resultSection = document.querySelector('#result');
         
       this.userInput.addEventListener('keyup', this.handleUserInput);
-      this.submitBtn.addEventListener('click', this.onSubmitClick);
+      this.submitBtn.addEventListener('click', this.onConfirmClick);
 
       this.gameInit();
     }
@@ -27,6 +27,7 @@ export default class BaseballGame {
     //게임초기화
     gameInit() {
       this.computerInputNumbers = setRandomNumbers();
+      this.resultSection.innerHTML = '';
       console.log(this.computerInputNumbers);
     }
  
@@ -35,17 +36,13 @@ export default class BaseballGame {
       this.userInputNumbers = e.target.value;
     }
 
-    //사용자 입력 값 유효성 검사
-    inputValidator() {
-      return numberValidator(this.userInputNumbers);
-    }
-
-    //사용자 입력 값 보내기
-    onSubmitClick = () => {
-      const isValid = this.inputValidator();
+    //사용자 입력 값 유효성 검사, 카운터 체크, 결과 보여주기
+    onConfirmClick = () => {
+      const isValid = numberValidator(this.userInputNumbers);
 
       if (isValid) {
-        let result = onCounterCheck(this.computerInputNumbers, this.userInputNumbers);
+        const result = onCounterCheck(this.computerInputNumbers, this.userInputNumbers);
+
         onResultShow(result, this.onRestartForm);
       }
     }
@@ -69,11 +66,10 @@ export default class BaseballGame {
       restartBtn.addEventListener('click', () => {
         this.gameInit();
         this.appSection.removeChild(restartSection);
-        this.resultSection.innerHTML = '';
       });
     }
 
-    //play 메서드
+    // play 메서드
     play(computerInputNumbers, userInputNumbers) {
       const isValid = numberValidator(userInputNumbers);
       

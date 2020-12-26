@@ -1,6 +1,6 @@
 const NUMBER_SIZE = 3;
 
-export const numberValidator = (userInput) => {
+export const numberValidator = userInput => {
     const userInputNumbersArray = userInput.split('');
     const setUserInput = new Set(userInput);
 
