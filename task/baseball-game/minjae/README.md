@@ -9,7 +9,7 @@
     - [✔️] 입력 값의 길이가 3이 아닐 때
     - [✔️] 입력 값에 중복된 숫자가 있을 때 - Set()
 5. [✔️] 스트라이크, 볼, 낫싱 카운트 
-6. [] 결과물 출력
+6. [✔️] 결과물 출력
 7. [] 정답 시 게임 종료하고 재시작 여부
 8. [] 재시작 버튼 누르면 게임 재시작
 
@@ -19,3 +19,5 @@
 - [JavaScript Class2] (https://jongmin92.github.io/2017/06/18/JavaScript/class/)
 
 - [Array Method] (http://blog.302chanwoo.com/2017/08/javascript-array-method/)
+
+- [Element add/remove] (https://doolyit.tistory.com/50)

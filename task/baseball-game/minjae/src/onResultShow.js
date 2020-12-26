@@ -1,10 +1,9 @@
-const appSection = document.querySelector('#app');
 const resultSection = document.querySelector('#result');
 
 const SUCCESS_MESSAGE = '🎉CORRECT ANSWER!!🎉';
 const NOTHING_MESSAGE = '😥NOTHING😥';
 
-export const onResultShow = (result) => {
+export const onResultShow = (result, gameInit) => {
     const { ballCount, strikeCount } = result; //비구조화 할당
     let resultMessage = '';
     
@@ -18,7 +17,7 @@ export const onResultShow = (result) => {
         resultMessage += `스트라이크 카운트: ${strikeCount} `
         if(strikeCount === 3) {
             resultMessage = SUCCESS_MESSAGE;
-            // onRestartForm();
+            gameInit();
         }
     } 
     resultSection.innerHTML = resultMessage;
