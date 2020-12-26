@@ -1,5 +1,6 @@
+const NUMBER_SIZE = 3;
+
 export const numberValidator = (userInput) => {
-    const NUMBER_SIZE = 3;
     const userInputNumbersArray = userInput.split('');
     const setUserInput = new Set(userInput);
 
@@ -10,15 +11,14 @@ export const numberValidator = (userInput) => {
         return false;
     });
 
-    if (userInput.length !== NUMBER_SIZE) {
+      if (userInput.length !== NUMBER_SIZE) {
         alert("숫자 길이가 다릅니다.");
         return false;
-    }
+      }
     
-    if (setUserInput.size !== NUMBER_SIZE) {
-      alert("숫자가 중복됩니다.");
-      return false;
-    }
-
+      if (setUserInput.size !== NUMBER_SIZE) {
+        alert("숫자가 중복됩니다.");
+        return false;
+      }
     return true;
 }
