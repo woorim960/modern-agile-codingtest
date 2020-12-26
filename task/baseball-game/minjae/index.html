@@ -3,21 +3,25 @@
   <head>
     <meta charset="UTF-8" />
 
-
     <title>숫자 야구 게임</title>
 
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- script -->
     <script type="module" src="./index.js" defer></script>
+    
   </head>
   <body>
     <div id="app">
-      <h1>⚾ 숫자 야구 게임</h1>
+      <h1>⚾ 숫자 야구 게임 ⚾</h1>
       <p>
         <strong>1~9까지의 수</strong>를 중복없이 <strong>3개</strong>를
-        작성해주세요. <br />
-        올바른 예) 139 <br />
-        틀린 예) 122
+        작성해주세요.<br />
+        <em>올바른 예) 139 </em><br />
+        <em>틀린 예) 122</em>
       </p>
-      <input type="text" id="user-input" />
+      <input type="text" id="user-input" placeholder="숫자를 입력하세요."/>
       <button id="submit">확인</button>
       <h3>📄 결과</h3>
       <div id="result"></div>

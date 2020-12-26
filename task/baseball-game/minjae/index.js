@@ -5,25 +5,25 @@ import { numberValidator } from './src/numberValidator.js';
 import { onCounterCheck } from './src/onCounterCheck.js';
 import { onResultShow } from './src/onResultShow.js';
 
-const SUCCESS_MESSAGE = '🎉CORRECT ANSWER!!🎉';
-const NOTHING_MESSAGE = '😥NOTHING😥';
+const SUCCESS_MESSAGE = '🎉 CONGRATULATION!! 🎉';
+const NOTHING_MESSAGE = '😥 NOTHING 😥';
 
 export default class BaseballGame {
     constructor() {
-        this.userInput = document.querySelector('#user-input');
-        this.submitBtn = document.querySelector('#submit');
-        this.resultSection = document.querySelector('#result');
-        this.appSection = document.querySelector('#app');
+      this.computerInputNumbers;
+      this.userInputNumbers;
 
-        this.computerInputNumbers;
-        this.userInputNumbers;
+      this.appSection = document.querySelector('#app');
+      this.userInput = document.querySelector('#user-input');
+      this.submitBtn = document.querySelector('#submit');
+      this.resultSection = document.querySelector('#result');
         
-        this.userInput.addEventListener('keyup', this.handleUserInput);
-        this.submitBtn.addEventListener('click', this.onSubmitClick);
+      this.userInput.addEventListener('keyup', this.handleUserInput);
+      this.submitBtn.addEventListener('click', this.onSubmitClick);
 
-        this.gameInit();
+      this.gameInit();
     }
-
+    
     //게임초기화
     gameInit() {
       this.computerInputNumbers = setRandomNumbers();
@@ -43,6 +43,7 @@ export default class BaseballGame {
     //사용자 입력 값 보내기
     onSubmitClick = () => {
       const isValid = this.inputValidator();
+
       if (isValid) {
         let result = onCounterCheck(this.computerInputNumbers, this.userInputNumbers);
         onResultShow(result, this.onRestartForm);
@@ -52,14 +53,14 @@ export default class BaseballGame {
     //재시작 폼
     onRestartForm = () => {
       const divSection = document.createElement('div');
-      const reStartSection = this.appSection.appendChild(divSection);
+      const restartSection = this.appSection.appendChild(divSection);
 
-      reStartSection.classList.add('restart-section');
+      restartSection.classList.add('restart-section');
 
       const restartForm = document.querySelector('.restart-section');
 
       restartForm.innerHTML = `
-          <p> 다시 시작하시겠습니까? </p>
+          <p class="restart-question"> 게임을 다시 시작하시겠습니까? </p>
           <button class="restart-btn"> 재시작 버튼 </button>
       `;
 
@@ -67,16 +68,17 @@ export default class BaseballGame {
 
       restartBtn.addEventListener('click', () => {
         this.gameInit();
-        this.appSection.removeChild(reStartSection);
+        this.appSection.removeChild(restartSection);
         this.resultSection.innerHTML = '';
       });
-  }
+    }
 
+    //play 메서드
     play(computerInputNumbers, userInputNumbers) {
       const isValid = numberValidator(userInputNumbers);
       
       let result = '';
-      if(isValid) {
+      if (isValid) {
         const Counter = onCounterCheck(computerInputNumbers, userInputNumbers);
         const { ballCount, strikeCount } = Counter;
 

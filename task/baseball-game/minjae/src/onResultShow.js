@@ -1,7 +1,7 @@
 const resultSection = document.querySelector('#result');
 
-const SUCCESS_MESSAGE = '🎉CORRECT ANSWER!!🎉';
-const NOTHING_MESSAGE = '😥NOTHING😥';
+const SUCCESS_MESSAGE = '🎉 CONGRATULATION!! 🎉';
+const NOTHING_MESSAGE = '😥 NOTHING 😥';
 
 export const onResultShow = (result, gameInit) => {
     const { ballCount, strikeCount } = result;
@@ -11,7 +11,7 @@ export const onResultShow = (result, gameInit) => {
         resultMessage = NOTHING_MESSAGE;
     }
     if (ballCount !== 0) {
-        resultMessage = `볼 카운트: ${ballCount} `;
+        resultMessage = `볼 카운트: ${ballCount}, `;
     }
     if (strikeCount !== 0) {
         resultMessage += `스트라이크 카운트: ${strikeCount} `;

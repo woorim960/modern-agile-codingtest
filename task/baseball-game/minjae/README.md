@@ -12,7 +12,8 @@
 6. [✔️] 결과물 출력
 7. [✔️] 정답 시 게임 종료하고 재시작 여부 폼 생성
 8. [✔️] 재시작 버튼 누르면 게임 재시작
-9. [✔️] play 함수 구현
+9. [✔️] play 메서드 구현
+10. [✔️] CSS 적용
 
 ## 🔗 개인 참고 링크 
 - [JavaScript Class] (https://infoscis.github.io/2018/02/13/ecmascript-6-introducing-javascript-classes/)
