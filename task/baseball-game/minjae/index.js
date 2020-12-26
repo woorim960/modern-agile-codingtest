@@ -1,7 +1,8 @@
 'use strict';
 
-import { setRandomNumbers } from './setRandomNumbers.js';
-import { numberValidator } from './numberValidator.js';
+import { setRandomNumbers } from './src/setRandomNumbers.js';
+import { numberValidator } from './src/numberValidator.js';
+import { onCounterCheck } from './src/onCounterCheck.js';
 
 const NUMBER_SIZE = 3;
 
@@ -40,17 +41,19 @@ export default class BaseballGame {
     onSubmit = () => {
       const isValid = this.inputValidator();
       if(isValid) {
-        onCounterCheck(this.computerInputNumbers, this.userInputNumbers)
+        let result = onCounterCheck(this.computerInputNumbers, this.userInputNumbers);
+        console.log(result);
+        this.onSuccessShow(result);
+      } else {
+        this.onFaliShow(result);
       }
     }
 
-    // //스트라이크, 볼, 낫싱카운터 체크
-    // onCounterCheck = () => {
+    // onSuccessShow = () => {
 
     // }
 
-    // //결과물 출력
-    // onResultShow = () => {
+    // onFaliShow = () => {
 
     // }
 

@@ -11,8 +11,6 @@ export const setRandomNumbers = () => {
       }
     }
     computerInputNumbers = randomNumbers.join('');
-    
-    console.log(computerInputNumbers);
-    
+  
     return computerInputNumbers;
   }
