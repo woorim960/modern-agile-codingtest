@@ -3,8 +3,7 @@
 import { setRandomNumbers } from './src/setRandomNumbers.js';
 import { numberValidator } from './src/numberValidator.js';
 import { onCounterCheck } from './src/onCounterCheck.js';
-
-const NUMBER_SIZE = 3;
+import { onResultShow } from './src/onResultShow.js';
 
 export default class BaseballGame {
     constructor() {
@@ -16,7 +15,7 @@ export default class BaseballGame {
         this.userInputNumbers;
         
         this.userInput.addEventListener('keyup', this.handleUserInput);
-        this.submitBtn.addEventListener('click', this.onSubmit);
+        this.submitBtn.addEventListener('click', this.onSubmitClick);
 
         this.gameInit();
     }
@@ -38,24 +37,14 @@ export default class BaseballGame {
     }
 
     //사용자 입력 값 보내기
-    onSubmit = () => {
+    onSubmitClick = () => {
       const isValid = this.inputValidator();
-      if(isValid) {
+      if (isValid) {
         let result = onCounterCheck(this.computerInputNumbers, this.userInputNumbers);
         console.log(result);
-        this.onSuccessShow(result);
-      } else {
-        this.onFaliShow(result);
-      }
+        onResultShow(result);
+      } 
     }
-
-    // onSuccessShow = () => {
-
-    // }
-
-    // onFaliShow = () => {
-
-    // }
 
     play(computerInputNumbers, userInputNumbers) {
       return "결과 값 String";
