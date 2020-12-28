@@ -1,0 +1,107 @@
+body {
+    background: #c6e8ff;
+}
+#app{
+  width: 1000px;
+  height: 80vh;
+  margin: 0 auto;
+  text-align: center;
+}
+#app h1{
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 100px;
+  padding-bottom: 20px;
+}
+#app p{
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+#app p strong {
+  color: #039678;
+  font-size: 2.2rem;
+}
+#app p em {
+  display:inline-block;
+  margin-top: 30px;
+  font-weight: 700;
+}
+#app p em:last-child {
+  margin-top: 0;
+}
+#user-input {
+  margin-top: 30px;
+  width: 300px;
+  height: 50px;
+  font-size: 1.3rem;
+  outline: none;
+  background: transparent;
+  border: 3px solid #2980b9;
+  border-radius: 5px;
+  color: #2980b9;
+  padding-left: 15px;
+  transition: all .2s ease;
+  font-weight: 600;
+}
+#user-input::placeholder {
+  color: #2980b9;
+  font-weight: 600;
+}
+#user-input:focus {
+  border: 3px solid #039678;
+  color: #039678;
+}
+#user-input:focus::placeholder{
+  color: #039678;
+}
+#submit {
+  width: 60px;
+  height: 60px;
+  outline: none;
+  background: transparent;
+  border: 3px solid #2980b9;
+  border-radius: 5px;
+  color: #2980b9;
+  font-weight: 700;
+  transition: all .2s ease;
+}
+#submit:hover {
+  border: 3px solid #039678;
+  color: #039678;
+}
+#app h3{
+  width: 200px;
+  padding: 15px;
+  margin: 0px auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-size: 1.7rem;
+  border-bottom: 3px solid #039678;
+  border-top: 3px solid #039678;
+  color: #039678;
+}
+#app #result {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.restart-btn {
+  width: 200px;
+  height: 50px;
+  background: transparent;
+  border: 3px solid #2980b9;
+  border-radius: 5px;
+  color: #2980b9;
+  font-size: 1.5rem;
+  transition: all .2s ease;
+  font-weight: 600;
+}
+#app p.restart-question {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.restart-btn:hover{
+  border: 3px solid #039678;
+  color: #039678;
+}
