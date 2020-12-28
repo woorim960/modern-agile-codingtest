@@ -6,9 +6,6 @@ import { onCounterCheck } from './src/onCounterCheck.js';
 import { onResultShow } from './src/onResultShow.js';
 import { onPlayResult } from './src/onPlayResult.js';
 
-const SUCCESS_MESSAGE = '🎉 CONGRATULATION!! 🎉';
-const NOTHING_MESSAGE = '😥 NOTHING 😥';
-
 export default class BaseballGame {
     constructor() {
       this.computerInputNumbers;
@@ -79,7 +76,7 @@ export default class BaseballGame {
         const Counter = onCounterCheck(computerInputNumbers, userInputNumbers);
         result = onPlayResult(Counter);
       }
-        return console.log(result);
+      return console.log(result);
     }
 }
 
