@@ -17,7 +17,7 @@ function ball(first, second, userNumArr, computerInputNumbers, ballCount) {
 function fail() {
     result.innerHTML = '미싱'
 }
-//성공! 글씨들과 버튼 생성
+
 
 
 export {strike, ball, fail};

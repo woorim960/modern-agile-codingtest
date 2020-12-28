@@ -11,7 +11,6 @@ function errorSituation(inputvalue) {
         error();
     }
 }
-  
 //잘못 입력했을 때 나오는 창
 function error() {
     alert('다시 입력해주세요!');

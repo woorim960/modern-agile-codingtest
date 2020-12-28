@@ -55,7 +55,7 @@ export default class BaseballGame {
     }else if (!strikeCount && !ballCount) {
       return fail();
     }else {
-      result.innerHTML = `${ballCount}볼 ${strikeCount}스트라이크`;
+      result.innerHTML = `${ballCount}볼 ${strikeCount}스트라이크`;  
     }
     return result;
   }
