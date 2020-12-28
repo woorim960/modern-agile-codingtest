@@ -7,7 +7,7 @@ function solution(arr) {
     }
     
     for (let el of arr) {
-        if(el !== MIN) {
+        if (el !== MIN) {
             answer.push(el);
         }
     }
