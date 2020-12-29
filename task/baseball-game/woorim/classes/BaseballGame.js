@@ -62,11 +62,11 @@ export default class BaseballGame {
 
   throwExceptionNumbers(userInputNumbers) {
     if (!Validator.isNumber(userInputNumbers)) {
-      exit("숫자가 아닙니다.");
+      this.exit("숫자가 아닙니다.");
       return true;
     }
     if (!Validator.isThreeLength(userInputNumbers)) {
-      exit("세자리 수가 아닙니다.");
+      this.exit("세자리 수가 아닙니다.");
       return true;
     }
     return false;
