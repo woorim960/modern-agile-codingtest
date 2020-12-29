@@ -8,7 +8,7 @@ export const numberValidator = userInput => {
       if (isNaN(parseInt(value))) {
         alert("숫자만 입력해주세요.");
       }
-        return false;
+      return false;
     });
 
       if (userInput.length !== NUMBER_SIZE) {
