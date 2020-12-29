@@ -15,14 +15,10 @@
 9. [✔️] play 메서드 구현
 10. [✔️] CSS 적용
 
-## 💻 결과 화면
+## 💻 결과 화면 (Live Server)
 
 ![1](https://user-images.githubusercontent.com/64779472/103164918-9ccc0080-4854-11eb-9636-6683b8d798f3.PNG)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4dad50df39c1b28cdb44f9211fbdcb977465fd7f
 ## 🔗 개인 참고 링크 
 - [JavaScript Class] (https://infoscis.github.io/2018/02/13/ecmascript-6-introducing-javascript-classes/)
 

@@ -4,9 +4,7 @@ import { setRandomNumbers } from './src/setRandomNumbers.js';
 import { numberValidator } from './src/numberValidator.js';
 import { onCounterCheck } from './src/onCounterCheck.js';
 import { onResultShow } from './src/onResultShow.js';
-
-const SUCCESS_MESSAGE = '🎉 CONGRATULATION!! 🎉';
-const NOTHING_MESSAGE = '😥 NOTHING 😥';
+import { onPlayResult } from './src/onPlayResult.js';
 
 export default class BaseballGame {
     constructor() {
@@ -76,22 +74,9 @@ export default class BaseballGame {
       let result = '';
       if (isValid) {
         const Counter = onCounterCheck(computerInputNumbers, userInputNumbers);
-        const { ballCount, strikeCount } = Counter;
-
-        if (ballCount === 0 && strikeCount === 0) {
-          result = NOTHING_MESSAGE;
-        }
-        if (ballCount !== 0) {
-          result = `볼 카운트: ${ballCount} `;
-        }
-        if (strikeCount !== 0) {
-          result += `스트라이크 카운트: ${strikeCount} `;
-          if (strikeCount === 3) {
-            result = SUCCESS_MESSAGE;
-          }
-        } 
+        result = onPlayResult(Counter);
       }
-        return console.log(result);
+      return console.log(result);
     }
 }
 

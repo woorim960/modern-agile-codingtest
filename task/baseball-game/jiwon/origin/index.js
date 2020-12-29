@@ -1,11 +1,10 @@
 `use strict`;
 
-import Error from './config/error/error.js'
-import {inputBtn, inputTxt} from './config/DOM.js';
-import BaseballGame from './config/result/baseballgame.js';
+import Error from './classes/error/error.js'
+import {inputBtn, inputTxt} from './classes/DOM.js';
+import BaseballGame from './classes/result/baseballgame.js';
 
 const baseballGame = new BaseballGame();
-
 
 function init() {
   inputBtn.addEventListener('click', ()=> {

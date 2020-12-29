@@ -1,24 +1,20 @@
 import { result } from '../DOM.js';
-import BaseballGame from './baseballgame.js'
-
 
 
 export default class Output {
-    
     //스트라이크랑 볼 존재할 때
-    static strikeAndball () {
-        const get = new BaseballGame();
-        if (get.ballCount() < 1) {
-            result.innerHTML = `${get.strikeCount()}스트라이크`;
-        }else if (get.strikeCount() < 1) {
-            result.innerHTML = `${get.ballCount()}볼`
+    static strikeAndball (strike, ball) {
+        if (ball < 1) {
+            result.innerHTML = `${strike}스트라이크`;
+        }else if (strike < 1) {
+            result.innerHTML = `${ball}볼`
         }else{
-            result.innerHTML = `${get.ballCount()}볼 ${get.strikeCount()}스트라이크`;
+            result.innerHTML = `${ball}볼 ${strike}스트라이크`;
         }
         
     }
     //하나도 안맞을때
-    static fail() {
+    static fail () {
         result.innerHTML = '미싱'
     }
     //성공
@@ -41,9 +37,8 @@ export default class Output {
         button.addEventListener('click', this.restart);
         document.body.appendChild(button)
     }
-
     //게임 재시작 버튼 실행 시
-    static restart() {
+    static restart () {
         window.location.reload();
     }
 }
