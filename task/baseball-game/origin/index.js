@@ -1,13 +1,5 @@
-// export default function BaseballGame() {
-//   this.play = function (computerInputNumbers, userInputNumbers) {
-//     return "결과 값 String";
-//   };
-// }
+"use strict";
 
-export default class BaseballGame {
-  play(computerInputNumbers, userInputNumbers) {
-    return "결과 값 String";
-  }
-}
+import BaseballGame from "./classes/BaseballGame.js"; // export defult
 
-new BaseballGame();
+// 기능 구현
