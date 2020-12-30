@@ -1,6 +1,9 @@
+'use strict';
+
 const NUMBER_SIZE = 3;
 
-export const setRandomNumbers = () => {
+export default class RandomNumbers {
+  static getRandomNumbers = () => {
     const randomNumbers = [];
 
     let computerInputNumbers = '';
@@ -14,3 +17,4 @@ export const setRandomNumbers = () => {
   
     return computerInputNumbers;
   }
+}

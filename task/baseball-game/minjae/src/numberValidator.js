@@ -1,6 +1,9 @@
+'use strict';
+
 const NUMBER_SIZE = 3;
 
-export const numberValidator = userInput => {
+export default class Validator {
+  static numberValidator = userInput => {
     const userInputNumbersArray = userInput.split('');
     const setUserInput = new Set(userInput);
 
@@ -21,4 +24,5 @@ export const numberValidator = userInput => {
         return false;
       }
     return true;
+  }
 }
