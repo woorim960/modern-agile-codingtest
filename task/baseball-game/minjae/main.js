@@ -3,7 +3,7 @@
 import RandomNumbers from './src/getRandomNumbers.js';
 import Validator from './src/numberValidator.js';
 import CounterCheck from './src/counterCheck.js';
-import Result from './src/resultShow.js';
+import ViewResult from './src/viewResult.js';
 import PlayResult from './src/playResult.js';
 import User from './src/getUserInput.js';
 import Restart from './src/restartForm.js';
@@ -22,7 +22,6 @@ export default class BaseballGame {
     gameInit() {
       this.computerInputNumbers = RandomNumbers.getRandomNumbers();
       resultSection.innerHTML = '';
-      this.userInputNumbers = '';
 
       console.log(this.computerInputNumbers);
     }
@@ -43,7 +42,7 @@ export default class BaseballGame {
       if (isValid) {
         const result = CounterCheck.getBallAndStrikeCount(this.computerInputNumbers, this.userInputNumbers);
 
-        Result.resultShow(result, Restart.restartForm);
+        ViewResult.viewResultShow(result, Restart.restartForm);
       }
     }
 

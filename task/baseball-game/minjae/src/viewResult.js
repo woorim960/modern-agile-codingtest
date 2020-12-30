@@ -1,12 +1,13 @@
 'use strict';
 
-const resultSection = document.querySelector('#result');
+import { resultSection } from '../utils/DOM.js';
 
 const SUCCESS_MESSAGE = '🎉 CONGRATULATION!! 🎉';
 const NOTHING_MESSAGE = '😥 NOTHING 😥';
 
-export default class Result {
-    static resultShow = (result, restart) => {
+export default class ViewResult {
+
+    static viewResultShow = (result, restart) => {
         const { ballCount, strikeCount } = result;
         
         let resultMessage = '';
