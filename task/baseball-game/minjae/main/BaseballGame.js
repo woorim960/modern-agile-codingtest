@@ -2,8 +2,8 @@
 
 import RandomNumbers from '../src/Random.js';
 import Validator from '../src/Validator.js';
-import CounterCheck from '../src/CounterCheck.js';
-import ViewResult from '../src/ViewResult.js';
+import CounterCheck from '../src/CCounterCheck.js';
+import ViewResult from '../src/VViewResult.js';
 import User from '../src/User.js';
 import Restart from '../src/Restart.js';
 import { userInput, submitBtn, resultSection } from '../utils/DOM.js';
