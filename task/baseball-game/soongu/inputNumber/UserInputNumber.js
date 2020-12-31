@@ -1,5 +1,5 @@
-`use strict`
-import { inputTxt } from '../utili/DOM.js';
+`use strict`;
+import { inputTxt } from "../util/DOM.js";
 
 export default class UserInputNumbers {
   getInputNumber() {

@@ -1,61 +1,46 @@
-// export default function BaseballGame() {
-//   this.play = function (computerInputNumbers, userInputNumbers) {
-//     return "결과 값 String";
-//   };
-// }
 "use strict";
+
 import BaseballGame from "./classes/BaseballGame.js";
+import Random from "./classes/Random.js";
 import { userInputNumbers, btnClick, result } from "./classes/DOM.js";
 
+const baseballGame = new BaseballGame();
+
 function init() {
-  randomQuestion();
+  const comRanNum = Random.question();
   console.log(comRanNum);
-  btnClick.addEventListener("click", ()=> {
-    let inputValue = userInputNumbers.value;
-    run(inputValue);
-  });
-}
-
-function run(inputValue) {
-  validation(inputValue);
-  
-}
-
-let comRanNum = [];
-function randomQuestion() {
-  let randomUseNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  
-  for(let n = 0; n <= 2; n++) {
-    const randomNumberIndex = parseInt(Math.random() * (10 - n));
-    comRanNum.push(randomUseNumber[randomNumberIndex]);
-    randomUseNumber.splice(randomNumberIndex, 1);
-  }
-
-  comRanNum = comRanNum.join('');
-  return comRanNum;
+  btnClick.addEventListener("click", validation);
 }
 
 function validation(inputValue) {
-  let comNumUserNum = { 'comNum' : comRanNum, 'userNum' : inputValue};
+  let numbers = { com: comRanNum, user: inputValue };
 
   if (inputValue.length !== 3) {
-    error(); 
-  } else if ((inputValue[0] === inputValue[1])) {
     error();
-  } else if ((inputValue[1] === inputValue[2])) {
-    error();
-  } else if ((inputValue[0] === inputValue[2])) {
+  } else if (isDuplicate(inputValue)) {
     error();
   } else if (!Number(inputValue)) {
     error();
   } else {
-    baseballClass.play(comNumUserNum['comNum'], comNumUserNum['userNum']);
+    baseballGame.play(numbers.com, numbers.user);
   }
 }
 
-function error() {
-  result.innerHTML = '응?';
+function isDuplicate() {
+  if (inputValue[0] === inputValue[1]) {
+    return true;
+  }
+  if (inputValue[1] === inputValue[2]) {
+    return true;
+  }
+  if (inputValue[0] === inputValue[2]) {
+    return true;
+  }
+  return false;
 }
 
-let baseballClass = new BaseballGame();
+function error() {
+  result.innerHTML = "응?";
+}
+
 init();
