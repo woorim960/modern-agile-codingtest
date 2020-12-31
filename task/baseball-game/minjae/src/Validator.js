@@ -9,7 +9,7 @@ export default class Validator {
 
     userInputNumbersArray.some(value => {
       if (isNaN(parseInt(value))) {
-        alert("숫자만 입력해주세요.");
+        alert( "숫자만 입력해주세요.");
       }
       return false;
     });

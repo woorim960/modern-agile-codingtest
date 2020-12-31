@@ -1,6 +1,6 @@
 'use strict';
 
-import BaseballGame from '../main.js';
+import BaseballGame from '../main/BaseballGame.js';
 import { appSection } from '../utils/DOM.js';
 
 const RESTART_HTML = `
@@ -25,6 +25,6 @@ export default class Restart {
             const baseball = new BaseballGame();
             baseball.gameInit();
             appSection.removeChild(restartSection);
-          });
+        });
     }
 }

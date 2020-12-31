@@ -8,7 +8,8 @@ export default class RandomNumbers {
 
     let computerInputNumbers = '';
     while (randomNumbers.length < NUMBER_SIZE) {
-      let candidate = Math.floor((Math.random() * 9) + 1);
+      const candidate = Math.floor((Math.random() * 9) + 1);
+
       if (!randomNumbers.includes(candidate)) {
         randomNumbers.push(candidate);
       }
