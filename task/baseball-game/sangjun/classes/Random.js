@@ -1,14 +1,17 @@
-'use strict';
+"use strict";
 
-
-export default class Random{
-  
- computerRandomNum(){
-    const computerNum = [];
-    for (let i = 0; i < 3; i++) {
-      computerNum.push([Math.floor(Math.random() * (9 - i))]);
+export default class Random {
+  static number() {
+    let numbers = "";
+    let count = 3;
+    while (count > 0) {
+      const number = Math.floor(Math.random() * (9 - 1) + 1);
+      if (!numbers.includes(number)) {
+        numbers += number;
+        count--;
+      }
     }
-    console.log(computerNum);
-    return computerNum;
+    console.log(numbers)
+    return numbers;
   }
-} 
+}
