@@ -2,7 +2,7 @@
 
 import { resultSection } from '../utils/DOM.js';
 
-const SUCCESS_MESSAGE = '🎉 CONGRATULATION!! 🎉';
+const SUCCESS_MESSAGE = '🎉 CONGRATULATION! 🎉';
 const NOTHING_MESSAGE = '😥 NOTHING 😥';
 
 export default class ViewResult {
