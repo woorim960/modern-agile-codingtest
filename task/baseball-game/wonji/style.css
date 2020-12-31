@@ -1,0 +1,24 @@
+body {
+    background: beige;
+}
+
+#app{
+    text-align: center;
+  }
+  
+#app{
+    position:absolute; 
+    top:35%; left:48%;
+    margin-top:-100px; margin-left:-100px; 
+}
+
+button:hover{
+    color: red;
+    background: plum;
+    cursor:pointer
+ }
+
+ #user-input:focus {
+    border: 5px solid plum;
+    color: plum;
+  }
