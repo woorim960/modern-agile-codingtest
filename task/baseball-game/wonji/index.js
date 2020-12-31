@@ -7,7 +7,7 @@
 import countStrikeBall from "./class/countStrikeBall.js";
 import Check from "./class/Check.js";
 import Computer from "./class/Computer.js";
-import Output from "./class/Output.js";
+// import Output from "./class/Output.js";
 
 
 const inputTxt = document.querySelector("#user-input"),
@@ -32,17 +32,18 @@ export default class BaseballGame {
     const { strike, ball } = countStrikeBall.num(inputValue,computerPick);
     console.log(countStrikeBall.num(inputValue,computerPick));
     
-    if(Output.isStrike()) {
-      Output.stikeMessage();
-    } else if (Output.isNoting()) {
-      Output.notingMessage();
+    if(strike === 3) {
+      result.innerHTML = `😘 정답 😘 <br/>
+        🥳 게임을 재시작하시려면 밑의 재시작 버튼을 누르세요 🥳`
+    } else if (strike === 0 && ball === 0) {
+      result.innerHTML = '😛 낫싱 😛'
     } else {
-        Output.ballAndStrikeMessage();
+      result.innerHTML = `😶 ${ball}볼 ${strike}스트라이크 😶`
     }
   }
 }
 
-Computer.getRandom(computerPick);
+Computer.random(computerPick);
 init();
 btnReset.addEventListener(`click`, () => {
   window.location.reload(true);
