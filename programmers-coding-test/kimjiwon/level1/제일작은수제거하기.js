@@ -8,3 +8,10 @@ function solution(arr) {
     
     return arr;
 }
+
+========= 
+// 이렇게도 할 수 있음.   
+function solution(arr) {
+    arr.splice(arr.indexOf(Math.min(...arr)), 1);
+    return arr.length === 0 ? [-1] : arr;
+}
