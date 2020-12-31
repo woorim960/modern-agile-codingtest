@@ -7,7 +7,7 @@ function solution(num) {
         if (num % 2) {
             num = num * 3 + 1;
             count++;
-        }else {
+        }else { // else 앞에 공백
             num = num / 2;
             count++;
         }
