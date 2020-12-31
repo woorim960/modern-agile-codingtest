@@ -1,17 +1,16 @@
 `use strict`;
 
-import BaseballGame from './service/result/baseballgame.js'
-import ThrowError from './service/error/errorCase.js'
-import {inputBtn, inputTxt} from './service/DOM.js';
+import Error from './classes/error/error.js'
+import {inputBtn, inputTxt} from './classes/DOM.js';
+import BaseballGame from './classes/result/baseballgame.js';
 
-const throwError = new ThrowError();
-
+const baseballGame = new BaseballGame();
 
 function init() {
   inputBtn.addEventListener('click', ()=> {
     let inputValue = inputTxt.value;
-    throwError.errorSituation(inputValue);
-    BaseballGame.calcurator();
+    Error.throw(inputValue);
+    baseballGame.play();
   });
 }
 
