@@ -36,7 +36,6 @@ function warnErrorMessage(userInputNumber) {
   if (!Validator.isInputLength(userInputNumber)) {
     alert("길이 제한을 지켜주세요");
   }
-  
 }
 
 function addResetButton(strikeAndBallCount) {
