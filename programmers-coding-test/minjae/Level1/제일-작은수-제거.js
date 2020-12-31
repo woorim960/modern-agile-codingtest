@@ -13,3 +13,11 @@ function solution(arr) {
     }
     return answer;
 }
+
+
+==============================
+// 이렇게 할 수도 있습니다 ㅎㅎ
+function solution(arr) {
+    arr.splice(arr.indexOf(Math.min(...arr)), 1);
+    return arr.length === 0 ? [-1] : arr;
+}
