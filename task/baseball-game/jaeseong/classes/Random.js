@@ -1,14 +1,18 @@
 "use strict";
-
+let count = 3;
+const MIN = 1;
+const MAX = 9;
 export default class Random {
   static question() {
-    const comRanNum = [];
-    const randomUseNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    for (let n = 0; n <= 2; n++) {
-      const idx = parseInt(Math.random() * (10 - n));
-      comRanNum.push(randomUseNumber[idx]);
-      randomUseNumber.splice(idx, 1);
+    let numbers = "";
+    while (count > 0) {
+      let number = parseInt(Math.random() * (MAX - MIN) + MIN);
+
+      if (!numbers.includes(number)) {
+        numbers += number;
+        count--;
+      }
     }
-    return comRanNum.join("");
+    return numbers;
   }
 }
