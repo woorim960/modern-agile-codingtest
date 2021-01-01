@@ -1,32 +1,44 @@
-import { result, inputTxt } from "../DOM.js";
-import Computer from "../random/computer.js";
+import { result } from "../DOM.js";
 import Output from "./output.js";
 
-let computerInputNumbers = Computer.getRandomNumbers();
+
 
 export default class BaseballGame {
-  play() {
-    this.countStrikeAndBall();
+  
+  play(userNumbers, computerInputNumbers) {
+    this.countStrikeAndBall(userNumbers, computerInputNumbers);
     return result;
   }
 
-  countStrikeAndBall() {
+  countStrikeAndBall(userNumbers, computerInputNumbers) {
     let ballCount = 0;
     let strikeCount = 0;
-    let userNumbers = inputTxt.value;
-
+    
     for (let i = 0; i < 3; i++) {
-      if (computerInputNumbers[i] === userNumbers[i]) {
+      if (this.isStrike(userNumbers, computerInputNumbers, i)) {
         strikeCount++;
-      } else if (computerInputNumbers.includes(userNumbers[i])) {
+      } else if (this.isBall(userNumbers, computerInputNumbers, i)) {
         ballCount++;
       }
     }
-
-    this.inspect(strikeCount, ballCount);
+    this.inspectStirkeBall(strikeCount, ballCount);
   }
 
-  inspect(strikeCount, ballCount) {
+  isStrike(userNumbers, computerInputNumbers, i) {
+    if (computerInputNumbers[i] === userNumbers[i]) {
+      return true;
+    }
+    return false;
+  }
+
+  isBall(userNumbers, computerInputNumbers, i) {
+    if (computerInputNumbers.includes(userNumbers[i])) {
+      return true;
+    }
+    return false;
+}
+
+  inspectStirkeBall(strikeCount, ballCount) {
     if (strikeCount === 3) {
       return Output.success();
     }

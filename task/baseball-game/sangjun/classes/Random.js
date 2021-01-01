@@ -1,18 +1,17 @@
 "use strict";
-let count = 3;
-const MIN = 1;
-const MAX = 9;
-export default class Random {
-  static question() {
-    let numbers = "";
-    while (count > 0) {
-      let number = parseInt(Math.random() * (MAX - MIN) + MIN);
 
+export default class Random {
+  static number() {
+    let numbers = "";
+    let count = 3;
+    while (count > 0) {
+      const number = Math.floor(Math.random() * (9 - 1) + 1);
       if (!numbers.includes(number)) {
         numbers += number;
         count--;
       }
     }
+    console.log(numbers)
     return numbers;
   }
 }

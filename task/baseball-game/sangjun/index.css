@@ -1,0 +1,27 @@
+body {
+    background-color: #81BEF7;
+}
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleexplantion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
