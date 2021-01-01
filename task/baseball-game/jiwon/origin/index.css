@@ -1,5 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
 body {
+    justify-content: center;
     text-align: center;
+    align-items: center;
     background-color: aliceblue;
     
+}
+
+h1 {
+    display: inline;
+    font-size: 60px;
+}
+
+#baseballTxt {
+    background: url("https://images0.pixlis.com/background-image-angled-lines-and-stripes-seamless-tileable-deep-sky-blue-lavender-pink-22zk6w.png");
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50% 0%;
+    }
 }
