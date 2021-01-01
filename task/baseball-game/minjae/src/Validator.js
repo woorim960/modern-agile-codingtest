@@ -1,12 +1,15 @@
+'use strict';
+
 const NUMBER_SIZE = 3;
 
-export const numberValidator = userInput => {
+export default class Validator {
+  static numberValidator = userInput => {
     const userInputNumbersArray = userInput.split('');
     const setUserInput = new Set(userInput);
 
     userInputNumbersArray.some(value => {
       if (isNaN(parseInt(value))) {
-        alert("숫자만 입력해주세요.");
+        alert( "숫자만 입력해주세요.");
       }
       return false;
     });
@@ -21,4 +24,5 @@ export const numberValidator = userInput => {
         return false;
       }
     return true;
+  }
 }
