@@ -9,7 +9,7 @@ import Computer from "./classes/random/computer.js"
 const baseballGame = new BaseballGame();
 
 let computerInputNumbers = Computer.getRandomNumbers();
-
+console.log(computerInputNumbers);
 function init() {
   inputBtn.addEventListener("click", run);
 }
