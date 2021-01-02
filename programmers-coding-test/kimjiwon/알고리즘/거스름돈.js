@@ -7,18 +7,17 @@ function giveChange(customerMoney, goodsPrice) {
 
     unitMoney.forEach(el => {
         if (calcurate(change, el)) {
-            changeUnitMoney.set(`${el}원`, calcurate(change, el));
+            changeUnitMoney.set(`${el}`, calcurate(change, el));
             change -= (el * calcurate(change, el)); 
         }
     });
 
     [...changeUnitMoney].forEach(el => {
         sum += el[1];
-        console.log(`${el[0]} : ${el[1]}개` );
-        
+        console.log(`${el[0]}원 : ${el[1]}개` );
     });
 
-    console.log(sum);
+    console.log(`총 ${sum}개`);
 }
 
 
