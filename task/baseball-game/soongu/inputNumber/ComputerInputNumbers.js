@@ -3,17 +3,11 @@ import { NUMBER_LENGTH } from "../util/NumberLength.js";
 
 export default class ComputerInputNumbers {
   random() {
-    let computerInputNumber = "";
-    let computerInputNumbers = "";
-    let count = NUMBER_LENGTH;
+    const computerInputNumbers = new Set();
 
-    while (count > 0) {
-      computerInputNumber = Math.floor(Math.random() * (10 - 1)) + 1;
-      if (!computerInputNumbers.includes(computerInputNumber)) {
-        computerInputNumbers += computerInputNumber;
-        count--;
-      }
+    while (computerInputNumbers.size != NUMBER_LENGTH) {
+      computerInputNumbers.add(Math.floor(Math.random() * (10 - 1) + 1) + "");
     }
-    return computerInputNumbers;
+    return Array.from(computerInputNumbers).join("");
   }
 }

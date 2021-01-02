@@ -9,6 +9,9 @@
 +결과물 출력하고 게임종료시 재시작 버튼 활성화
 +객체화하여 파일별로 만들기
 	+document.querySelector를 DOM.js파일로 만들기 O
-	+클래스로 출력할 수 있도록 다시 만들기 아직 해결 X
+	+클래스로 출력할 수 있도록 만들기
 	+BaseBallGame클래스를 BaseBallGamejs로 분리
+	+userNum
+	+Random
+	+Error
 +간단한 CSS작업 
