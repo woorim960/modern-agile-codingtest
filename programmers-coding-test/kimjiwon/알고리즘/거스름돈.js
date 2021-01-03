@@ -22,8 +22,8 @@ function giveChange(customerMoney, goodsPrice) {
 }
 
 
-function calcurate(change, el) {
-    return parseInt(change / el);
+function countSpendingMoneys(change, unitMoney) {
+    return parseInt(change / unitMoney);
 }
 
 
