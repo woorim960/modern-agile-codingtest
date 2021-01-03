@@ -5,10 +5,10 @@ function giveChange(customerMoney, goodsPrice) {
     let sum = 0,
     change = customerMoney - goodsPrice;
 
-    unitMoney.forEach(el => {
-        if (calcurate(change, el)) {
-            changeUnitMoney.set(`${el}`, calcurate(change, el));
-            change -= (el * calcurate(change, el)); 
+    unitMoneys.forEach(unitMoney => {
+        if (calcurate(change, unitMoney)) {
+            changeUnitMoney.set(`${unitMoney}`, calcurate(change, unitMoney));
+            change -= (unitMoney * calcurate(change, unitMoney)); 
         }
     });
 
@@ -29,4 +29,3 @@ function calcurate(change, el) {
 giveChange(10000, 4780);
 giveChange(3000, 1550);
 giveChange(3000, 1450);
-
