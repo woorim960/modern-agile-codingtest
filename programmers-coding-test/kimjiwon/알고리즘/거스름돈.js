@@ -12,10 +12,11 @@ function giveChange(customerMoney, goodsPrice) {
         }
     });
 
-    [...changeUnitMoney].forEach(el => {
-        sum += el[1];
-        console.log(`${el[0]}원 : ${el[1]}개` );
-    });
+   let cnt = 0;
+   for (let unitMoney in changeUnitMoney) {
+       cnt += changeUnitMoney[unitMoney];
+       console.log(`${unitMoney}원 : ${changeUnitMoney[unitMoney]}`);
+   }
 
     console.log(`총 ${sum}개`);
 }
