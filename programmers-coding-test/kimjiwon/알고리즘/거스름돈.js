@@ -1,5 +1,5 @@
 function giveChange(customerMoney, goodsPrice) {
-    const unitMoney = [10000 ,5000 ,1000, 500, 100, 50, 10];
+    const unitMoneys = [10000 ,5000 ,1000, 500, 100, 50, 10];
     const changeUnitMoney = new Map();
 
     let sum = 0,
