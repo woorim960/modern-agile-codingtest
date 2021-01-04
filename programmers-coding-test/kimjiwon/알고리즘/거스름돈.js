@@ -6,9 +6,9 @@ function giveChange(customerMoney, goodsPrice) {
     change = customerMoney - goodsPrice;
 
     unitMoneys.forEach(unitMoney => {
-        if (calcurate(change, unitMoney)) {
-            changeUnitMoney.set(`${unitMoney}`, calcurate(change, unitMoney));
-            change -= (unitMoney * calcurate(change, unitMoney)); 
+        if (countSpendingMoneys(change, unitMoney)) {
+            changeUnitMoney.set(`${unitMoney}`, countSpendingMoneys(change, unitMoney));
+            change -= (unitMoney * countSpendingMoneys(change, unitMoney)); 
         }
     });
 
