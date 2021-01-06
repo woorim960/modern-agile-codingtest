@@ -1,23 +1,32 @@
 `use strict`;
 
-import Error from "./classes/error/error.js";
+import ErrorMessage from "./classes/error/ErrorMessage.js";
 import { inputBtn, inputTxt } from "./classes/DOM.js";
-import BaseballGame from "./classes/result/baseballgame.js";
-import Validator from "./classes/Validator.js";
+import BaseballGame from "./classes/result/Baseballgame.js";
+import ErrorValidator from "./classes/error/ErrorValidator.js";
+import Computer from "./classes/random/computer.js"
 
 const baseballGame = new BaseballGame();
 
+let computerInputNumbers = Computer.getRandomNumbers();
+console.log(computerInputNumbers);
 function init() {
   inputBtn.addEventListener("click", run);
 }
 
 function run() {
   let inputValue = inputTxt.value;
-  if (!Validator.isThreeNumber(inputValue)) {
-    Error.overThreeNumber();
+
+  if (ErrorValidator.isNotNumber(inputValue)) {
+    return ErrorMessage.notNumber();
   }
-  Error.throw(inputValue);
-  baseballGame.play();
+  if (!ErrorValidator.isThreeNumber(inputValue)) {
+    return ErrorMessage.overThreeNumber();
+  }
+  if (ErrorValidator.isoverlapNumber(inputValue)) {
+    return ErrorMessage.overlapNumber();
+  }
+  baseballGame.play(inputValue, computerInputNumbers);
 }
 
 init();

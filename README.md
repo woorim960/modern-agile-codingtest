@@ -188,13 +188,6 @@ for (let num of arr) {
 }
 ```
 
-```javascript
-// 반복문 안에서 변수를 생성하지 마라. 이 또한 반복이다.
-for (let i = 0; i < length; i++) {
-    let a = a+i;
-}
-```
-
 ### • space vs tab 혼용
 
 들여쓰기에 space와 tab을 혼용하지 않는다.
