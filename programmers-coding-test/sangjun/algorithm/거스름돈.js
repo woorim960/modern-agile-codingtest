@@ -26,6 +26,6 @@ function changeMoney(value) {
       console.log(`${change}원 ${counts[index]}개`);
     });
   }
-  
+
   changeMoney(6400);
   changeMoney(7200);
