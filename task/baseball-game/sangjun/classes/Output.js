@@ -1,13 +1,13 @@
 "use strict";
-import {resultSpace} from "../classes/DOM.js";
+import { resultSpace } from "../classes/DOM.js";
 
 export default class Output {
   static readout(strikeCount, ballCount) {
     if (strikeCount === 3) {
-      this.success();
-    } else if (!ballCount && !strikeCount) {
-      this.nothing();
-      return;
+      return this.success();
+    }
+    if (!ballCount && !strikeCount) {
+      return this.nothing();
     }
     resultSpace.innerHTML = `${ballCount}볼 ${strikeCount}스트라이크`;
   }
@@ -37,6 +37,7 @@ export default class Output {
     button.addEventListener("click", this.reset);
     document.body.appendChild(button);
   }
+
   static reset() {
     window.location.reload();
   }

@@ -11,7 +11,6 @@ export default class Random {
         count--;
       }
     }
-    console.log(numbers)
     return numbers;
   }
 }

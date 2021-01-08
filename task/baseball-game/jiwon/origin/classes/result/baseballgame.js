@@ -1,19 +1,11 @@
 import { result } from "../DOM.js";
 import Output from "./output.js";
 
-
-
 export default class BaseballGame {
-  
   play(userNumbers, computerInputNumbers) {
-    this.countStrikeAndBall(userNumbers, computerInputNumbers);
-    return result;
-  }
-
-  countStrikeAndBall(userNumbers, computerInputNumbers) {
     let ballCount = 0;
     let strikeCount = 0;
-    
+
     for (let i = 0; i < 3; i++) {
       if (this.isStrike(userNumbers, computerInputNumbers, i)) {
         strikeCount++;
@@ -36,7 +28,7 @@ export default class BaseballGame {
       return true;
     }
     return false;
-}
+  }
 
   inspectStirkeBall(strikeCount, ballCount) {
     if (strikeCount === 3) {
