@@ -1,14 +1,26 @@
-function solution(n, k) {
-    const sortArray = k.sort((a, b) => a - b);
-    const firstRepeatLength = n[2];
+function solution(n, m, k) {
+    const RandomArray = [];
+    
+    let sortArray = [];
+    let firstNumber, secondNumber, sum;
+    firstNumber = secondNumber = sum = 0;
+    let count = m;
 
-    const firstNumber = sortArray[n[0] - 1];
-    const secondNumber = sortArray[n[0] - 2];
+    for (let i = 0; i < n; i++) {
+        RandomArray.push(Math.floor(Math.random() * 9 + 1));
+    }
 
-    let sum = 0;
-    let count = n[1];
-    while(true){
-        for (let i = 0; i < firstRepeatLength; i++) {
+    sortArray = RandomArray.sort((a, b) => a - b);
+    firstNumber = sortArray[n - 1];
+    secondNumber = sortArray[n - 2];
+
+    /* 출력 확인용 */
+    console.log(sortArray);
+    console.log(firstNumber);
+    console.log(secondNumber);
+
+    while (true) {
+        for (let i = 0; i < k; i++) {
             if (count == 0) {
                 break;
             }
@@ -23,6 +35,4 @@ function solution(n, k) {
     }
     return sum;
 }
-
-console.log(solution([5, 8, 3], [2, 4, 5, 4, 6]));
-console.log(solution([5, 7, 2], [3, 4, 3, 4, 3]));
+console.log(solution(5, 8, 3));
