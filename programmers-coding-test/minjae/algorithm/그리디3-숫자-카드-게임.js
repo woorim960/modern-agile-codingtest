@@ -2,10 +2,10 @@ function solution(row, column) {
     const RandomArrays = [];
     const minNumbers= [];
     
-    let answer = [];
+    let answer = 0;
 
     for (let i = 0; i < row; i++) {
-        
+
         let temp = [];
         for (let j = 0; j < column; j++) {
             temp.push(Math.floor(Math.random() * 9 + 1));
