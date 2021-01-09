@@ -1,17 +1,21 @@
-function settingCard(row, column) {
-  const cards = [];
-  const compareMaxcards = [];
-  while (cards.length != column) {
+const cards = [];
+
+function setCards(row, column) {
+  while (cards.length !== column) {
     cards.push(rowcards(row));
   }
-
-  for (let i in cards) {
-    compareMaxcards.push(Math.min.apply(null, cards[i]));
-  }
-  return Math.max.apply(null, compareMaxcards);
 }
 
-console.log(settingCard(3, 4));
+function getMaxCard() {
+  const minCards = [];
+  for (let i in cards) {
+    minCards.push(Math.min.apply(null, cards[i]));
+  }
+  return Math.max.apply(null, minCards);
+}
+
+setCards(3, 4);
+console.log(getMaxCard());
 
 //랜덤 카드 뽑기
 function rowcards(row) {

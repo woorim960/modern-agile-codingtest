@@ -1,5 +1,5 @@
 function bigNumberRule(firstLine) {
-  const rule = firstLine.split(" ");
+  const [ n, m, k ] = firstLine.split(" ");
   const numbers = array(rule[0]);
   let largestNumber, secondNumber, count, result;
   largestNumber = secondNumber = count = result = 0;
