@@ -14,11 +14,12 @@ for (let i = 0; i < data.length; i++) {
 
 n = parseInt(n);
 m = parseInt(m);
+k = parseInt(k);
 data.sort((a, b) => a - b);
 
 let first = data[n - 1];
 let second = data[n - 2];
-
+ 
 let count = parseInt(m / (k + 1) * k);
 count += m % (k + 1);
 
