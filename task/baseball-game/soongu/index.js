@@ -24,6 +24,7 @@ function run() {
     computerInputNumber,
     userInputNumber
   );
+
   getFinalMessage(strikeAndBallCount);
   addResetButton(strikeAndBallCount);
 }
@@ -32,7 +33,7 @@ function warnErrorMessage(userInputNumber) {
   if (!Validator.isNumber(userInputNumber)) {
     alert("숫자를 입력해주세요");
   }
-  
+
   if (!Validator.isInputLength(userInputNumber)) {
     alert("길이 제한을 지켜주세요");
   }

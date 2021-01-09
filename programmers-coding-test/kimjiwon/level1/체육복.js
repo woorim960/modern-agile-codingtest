@@ -1,14 +1,14 @@
 function solution(n, lost, reserve) {
     const clothes = [];
     let count = 0;
-    while(clothes.length < n){ // while"공백"()"공백"{
+    while (clothes.length < n) { 
         clothes.push(1);
     }
-    reserve.forEach(ele => {    // ele -> el
-        clothes.splice(ele - 1, 1, 2);
+    reserve.forEach(el => {    
+        clothes.splice(el - 1, 1, 2);
     });
-    lost.forEach(ele => {
-        clothes.splice(ele - 1, 1, (clothes[ele - 1] - 1));
+    lost.forEach(el => {
+        clothes.splice(el - 1, 1, (clothes[el - 1] - 1));
     });
     
     for (let i = 0; i < n; i++) {
@@ -17,8 +17,8 @@ function solution(n, lost, reserve) {
         }
     }
     
-    clothes.forEach(ele => {
-        if (ele >= 1) {
+    clothes.forEach(el => {
+        if (el >= 1) {
             count++;
         }
     });
