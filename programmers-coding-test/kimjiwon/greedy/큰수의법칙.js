@@ -1,6 +1,6 @@
-function bigNumberRule(firstLine) {
-  const [ n, m, k ] = firstLine.split(" ");
-  const numbers = array(rule[0]);
+function bigNumberRule() {
+  const [n, m, k] = [5, 8, 3];
+  const numbers = array(n);
   let largestNumber, secondNumber, count, result;
   largestNumber = secondNumber = count = result = 0;
 
@@ -9,16 +9,16 @@ function bigNumberRule(firstLine) {
   largestNumber = numbers[0];
   secondNumber = numbers[1];
 
-  count = (+rule[1] / (+rule[2] + 1)) * +rule[2];
-  count += +rule[1] % (+rule[2] + 1);
+  count = (m / (k + 1)) * k;
+  count += m % (k + 1);
 
   result = count * largestNumber;
-  result += (+rule[1] - count) * secondNumber;
+  result += (m - count) * secondNumber;
 
   return result;
 }
 
-console.log(bigNumberRule("5 8 3"));
+console.log(bigNumberRule());
 
 //랜덤으로 숫자 고르기
 function array(arrayLength) {

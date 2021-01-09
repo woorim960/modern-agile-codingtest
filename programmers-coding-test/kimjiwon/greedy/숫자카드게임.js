@@ -6,16 +6,12 @@ function setCards(row, column) {
   }
 }
 
-function getMaxCard() {
-  const minCards = [];
-  for (let i in cards) {
-    minCards.push(Math.min.apply(null, cards[i]));
-  }
-  return Math.max.apply(null, minCards);
-}
+const getMaxCard = (cards) =>
+  Math.max(...cards.map((card) => card.sort((a, b) => a - b)[0]));
 
 setCards(3, 4);
-console.log(getMaxCard());
+console.log(getMaxCard(cards));
+//대애애박 ...배열하면 안의 배열은 풀린다! 머리 딱 치고 갑니다..
 
 //랜덤 카드 뽑기
 function rowcards(row) {
