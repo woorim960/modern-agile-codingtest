@@ -12,4 +12,4 @@ function minNumberTimes(number, dividedNumber) {
   return count;
 }
 
-console.log(minNumberTimes(24, 3));
+console.log(getMinNumberCount(24, 3));
