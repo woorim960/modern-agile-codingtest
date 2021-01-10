@@ -1,0 +1,42 @@
+body {
+  text-align: center;
+  font-family: cursive;
+  background-color: cornsilk;
+}
+
+#app {
+  text-align: center;
+}
+#app h1 {
+  animation-duration: 3s;
+  animation-name: slidein;
+  background-color: blanchedalmond;
+}
+#app p {
+  background-color: crimson;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+#app button {
+  background-color: rgb(92, 71, 34);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+}
+#app button:hover {
+  background-color: rgb(236, 214, 176);
+}

@@ -1,7 +1,5 @@
 `use strict`;
 
-import Restart from "../util/Restart.js";
-
 export default class BaseballGame {
   play(computerInputNumbers, userInputNumbers) {
     const { strike, ball } = this.getStrikeAndBallCount(
