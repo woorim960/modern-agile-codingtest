@@ -1,17 +1,17 @@
-function untilOne(first, second) {
-    let result = 0;
+function untilOne(n, k) {
+    let count = 0;
     
-    while (first > 1) {
-        if (first % second === 0) {
-            first = first / second;
-            result += 1;
+    while (n > 1) {
+        if (n % k === 0) {
+            n /= k;
+            count += 1;
         } else {
-            first -= 1;
-            result += 1;
+            n -= 1;
+            count += 1;
         }
     }
 
-    return result;
+    return count;
 }
 
 console.log(untilOne(25, 5));

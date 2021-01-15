@@ -1,8 +1,6 @@
 function cardGame(row, column) {
     let cards = [];
-    let minCard = [];
-    let minCards = [];
-
+    
     for (let i = 0; i < row; i++){
         let rowCards = [];
             for (let j = 0; j < column; j++){
@@ -12,10 +10,7 @@ function cardGame(row, column) {
     }
     console.log(cards)
 
-    for (let i = 0; i < cards.length; i++){
-        minCard.push(Math.min.apply(null, cards[i]));
-    }
-    return minCards = Math.max.apply(null, minCard);
+    return Math.max(...cards.map(rowCards => Math.min(...rowCards)));
 }
 
 console.log(cardGame(5, 4)); 
