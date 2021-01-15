@@ -29,4 +29,19 @@ for (let plan of plans) {
     y = ny;
 }
 
+//2번째 코드
+// plans.forEach((plan) => {
+//     for (let type in move_types) {
+//       if (plan === move_types[type]) {
+//         nx = x + dx[type];
+//         ny = y + dy[type];
+//       }
+//     }
+//     if (nx < 1 || ny < 1 || nx > n || ny > n){
+//       return;
+//     }
+//     x = nx;
+//     y = ny;
+//   });
+
 console.log(x,y);
