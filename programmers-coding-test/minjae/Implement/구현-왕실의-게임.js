@@ -1,8 +1,8 @@
 function solution(n, m) {
-    const CHESS_LENGTH = 8;
+    const chessLength = 8;
     const x = n.charCodeAt(0) - 'a'.charCodeAt(0) + 1;
     const y = m.charCodeAt(0) - '0'.charCodeAt(0);
-    const steps = [
+    const stepList = [
         [-2 , -1 ], [-1 , -2], [1, -2], [2, -1 ],
         [2, 1 ], [1, 2], [-1, 2], [-2, 1]
     ];
@@ -10,11 +10,11 @@ function solution(n, m) {
     let count = 0;
     let nx, ny;
     nx = ny = 0;
-    for (let i = 0; i < steps.length; i++) {
-        nx = x + steps[i][0];
-        ny = y + steps[i][1];
+    for (let i = 0; i < stepList.length; i++) {
+        nx = x + stepList[i][0];
+        ny = y + stepList[i][1];
         
-        if (nx >= 1 && ny >= 1 && nx <= CHESS_LENGTH && ny <= CHESS_LENGTH) {
+        if (nx >= 1 && ny >= 1 && nx <= chessLength && ny <= chessLength) {
             count++;
         }
     }

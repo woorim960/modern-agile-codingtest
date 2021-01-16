@@ -15,8 +15,8 @@ function solution(n) {
     let nx, ny, turnTime;
     nx = ny = turnTime = 0;
 
-    let count = 1;
-    mapField[x][y] = 2; //현재 값 카운트
+    let count = 1; //처음 위치 카운트
+    mapField[x][y] = 2;
     while (true) { 
         direction--;
         if (direction === -1) {
