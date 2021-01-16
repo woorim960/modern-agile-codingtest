@@ -18,8 +18,11 @@ const dy = [0, 1, 0, -1];
 let x = +avatar[0];
 let y = +avatar[1];
 let direction = +avatar[2];
-let turnTime, changeX, changeY, count;
-count = turnTime = changeX = changeY = 0;
+let turnTime, changeX, changeY;
+let count = 1;
+turnTime = changeX = changeY = 0;
+
+map[x][y] = 2;
 
 while (true) {
   direction--;
@@ -47,6 +50,7 @@ while (true) {
     break;
   }
 }
+console.log(map);
 console.log(count);
 // function north(row, column, direction) {
 //   row--;
