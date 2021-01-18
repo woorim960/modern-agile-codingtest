@@ -34,9 +34,8 @@ while(true) {
     count++;
     turn_time = 0;
     continue;
-  } else {
-    turn_time++;
   }
+  turn_time++;
   if (turn_time === 4) {
     nx = x - dx[direction];
     ny = y - dy[direction];
