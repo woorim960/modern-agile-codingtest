@@ -24,10 +24,7 @@ let count = 1;
 map[x][y] = 1;
 
 function turnLeft() {
-    direction--;
-    if (direction === -1) {
-        direction = 3;
-    }
+    direction = direction - 1 === -1 ? 3 : direction--;
 }
 
 while (true) {
