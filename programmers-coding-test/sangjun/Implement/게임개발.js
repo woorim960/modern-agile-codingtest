@@ -47,9 +47,7 @@ while (true) {
     }
     turnTime++;
 
-    if (turnTime > 4) {
-        break;
-    }
+    if (turnTime > 4) break;
 }
 
 console.log(count);
