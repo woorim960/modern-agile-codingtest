@@ -8,7 +8,7 @@ let [x, y] = [1, 1];
 
 for (let i in moves) {
     if (movePlan[i] === moves[0]) {
-        y - 1 === 0 ? y === 1 : y = y - 1;
+        y = y - 1 === 0 ? 1 : y - 1;
     }
     if (movePlan[i] === moves[1]) {
         y + 1 === N + 1 ? y === 1 : y = y + 1;
