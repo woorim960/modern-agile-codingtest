@@ -25,7 +25,7 @@ turnTime = changeX = changeY = 0;
 map[x][y] = 2;
 
 while (true) {
-  direction = (direction - 1) === -1 ? 3 : direction—;
+  direction = (direction - 1) === -1 ? 3 : direction--;
   changeX = x + dx[direction];
   changeY = y + dy[direction];
   if (turnTime === 4) {
@@ -40,6 +40,7 @@ while (true) {
     count++;
     turnTime = 0;
     continue;
+  }
   turnTime++;
   if (turnTime === 5) break;
 }
