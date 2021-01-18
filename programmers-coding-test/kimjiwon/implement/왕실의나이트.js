@@ -12,7 +12,7 @@ for (let i of moves) {
   nextColumn = nextRow = 0;
   nextRow = rows.indexOf(location[0]) + 1 + i[0];
   nextColumn = columns.indexOf(location[1]) + 1 + i[1];
-  if (9 > nextRow && nextRow > 0 && 9 > nextColumn && nextColumn > 0) {
+  if (nextRow < 9 && nextRow > 0 && nextColumn < 9 && nextColumn > 0) {
     count++;
   }
 }
