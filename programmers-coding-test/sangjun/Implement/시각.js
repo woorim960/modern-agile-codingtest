@@ -8,7 +8,7 @@ for (let h = 0; h < H + 1; h++) {
     for (let m = 0; m < 60; m ++) {
         for (let s = 0; s < 60; s++) {
             let times = `${h} ${m} ${s}`
-            if (times.match(/[3]/g)) {
+            if (times.includes(“3”)) {
                 count++;
             }
         }
