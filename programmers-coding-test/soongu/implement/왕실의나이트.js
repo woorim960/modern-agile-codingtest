@@ -5,8 +5,7 @@ const data = rl.question("나이트의 위치를 입력해주세요.\n>> ").spli
 
 let row = (data[0].charCodeAt() - 'a'.charCodeAt()) + 1;
 let column = parseInt(data[1]);
-let next_row = 0;
-let next_column = 0;
+let [next_row, next_column] = [0, 0];
 
 let count = 0;
 
