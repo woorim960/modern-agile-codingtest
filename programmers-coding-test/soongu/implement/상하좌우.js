@@ -8,22 +8,21 @@ let a = rl.question("이동할 방향을 입력해주세요.\n>> ").toUpperCase(
 let traveler = [1, 1];
 
   for (let direction of a) {
-      if (direction === 'R') {
-        if (traveler[1] < n) {
-          traveler[1] += 1;
-        }
-      } else if (direction === 'L') {
-          if (traveler[1] > 1) {
-            traveler[1] -= 1;
-          }
-      } else if (direction === 'U') {
-          if (traveler[0] > 1) {
-            traveler[0] -= 1;
-          }
-      } else if (direction === 'D') {
-            if (traveler[0] < n) {
-            traveler[0] += 1;
-          }
+      switch(direction) {
+        case ‘R’ :
+          traveler[1] += traveler[1] < n ? 1 : 0;
+          break;
+        case 'L' :
+          traveler[1] -= traveler[1] > 1 ? 1 : 0;
+          break;
+        case 'U' :
+          traveler[0] -= traveler[0] > 1 ? 1 : 0;
+          break;
+        case 'D' :
+          traveler[0] += traveler[0] < n ? 1 : 0;
+          break;
+        default : 
+          break;
       }
   }
 
