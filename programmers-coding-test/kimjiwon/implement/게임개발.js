@@ -46,9 +46,7 @@ while (true) {
   } else {
     turnTime++;
   }
-  if (turnTime === 5) {
-    break;
-  }
+  if (turnTime === 5) break;
 }
 console.log(map);
 console.log(count);
