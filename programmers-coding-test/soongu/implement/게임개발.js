@@ -4,7 +4,7 @@ const rl = require("readline-sync");
 let [ n, m ] = rl.question("공간의 크기를 입력해주세요.\n>> ").split(' ').map((val) => parseInt(val));
 const d = Array.from(Array(n), () => Array(m).fill(0))
 
-let [ x, y , direction ] = rl.question("현재 캐릭터의 x좌표, y좌표, 방향을 입력해주세요.\n>> ").split(' ').map((val) => parseInt(val));;
+let [ x, y , direction ] = rl.question("현재 캐릭터의 x좌표, y좌표, 방향을 입력해주세요.\n>> ").split(' ').map((val) => parseInt(val));
 d[x][y] = 1;
 
 array = [];
