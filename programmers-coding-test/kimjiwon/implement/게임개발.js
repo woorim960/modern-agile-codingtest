@@ -40,9 +40,7 @@ while (true) {
     count++;
     turnTime = 0;
     continue;
-  } else {
-    turnTime++;
-  }
+  turnTime++;
   if (turnTime === 5) break;
 }
 console.log(map);
