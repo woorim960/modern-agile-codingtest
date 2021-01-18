@@ -45,55 +45,5 @@ while (true) {
 }
 console.log(map);
 console.log(count);
-// function north(row, column, direction) {
-//   row--;
-//   if (!map[row][column]) {
-//     row++;
-//     map[row][column] = 2;
-//     direction++;
-//     return west(row, column, direction);
-//   } else {
-//     map[row][column] = 2;
-//     count++;
-//     direction = 0;
-//   }
-// }
-// function south(row, column, direction) {
-//   row++;
-//   if (!map[row][column]) {
-//     row--;
-//     map[row][column] = 2;
-//     direction++;
-//     return east(row, column, direction);
-//   } else {
-//     map[row][column] = 2;
-//     count++;
-//     direction = 0;
-//   }
-// }
-// function east(row, column, direction) {
-//   column++;
-//   if (!map[row][column]) {
-//     column--;
-//     map[row][column] = 2;
-//     direction++;
-//     return north(row, column, direction);
-//   } else {
-//     map[row][column] = 2;
-//     count++;
-//     direction = 0;
-//   }
-// }
-// function west(row, column, direction) {
-//   column--;
-//   if (!map[row][column]) {
-//     column++;
-//     map[row][column] = 2;
-//     direction++;
-//     return south(row, column, direction);
-//   } else {
-//     map[row][column] = 2;
-//     count++;
-//     direction = 0;
-//   }
-// }
+
+
