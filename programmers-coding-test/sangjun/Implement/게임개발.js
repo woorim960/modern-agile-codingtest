@@ -6,9 +6,8 @@ const characterLocation = rl.question("캐릭터위치 바라보는방향입력 
 const map = [];
 
 for (let i = 0; i < N[0]; i++) {
-    let arrayLandSee = rl.question("맵의 크기의 맞게 육지0 바다1 입력 :\n>> ").split(" ");
-    let numLandSee = arrayLandSee.map((el) => parseInt(el));
-    map.push(numLandSee);
+    const vector = rl.question("맵의 크기의 맞게 육지0 바다1 입력 :\n>> ").split(" ") .map((el) => parseInt(el));
+    map.push(vector);
 }
 
 const dx = [-1, 0, 1, 0];
