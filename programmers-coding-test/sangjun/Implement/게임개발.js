@@ -39,8 +39,7 @@ while (true) {
 
     if (map[nx][ny] === 0) {
         map[nx][ny] = 1;
-        x = nx;
-        y = ny;
+       [x, y] = [nx, ny];
         count++;
         turnTime = 0;
         console.log(count);
