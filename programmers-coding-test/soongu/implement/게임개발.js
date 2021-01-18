@@ -16,10 +16,7 @@ let dx = [ -1, 0, 1, 0 ];
 let dy = [ 0, 1, 0, -1 ]; 
 
 function turn_left() {
-  direction -= 1;
-  if (direction === -1) {
-    direction = 3;
-  }
+  direction = direction - 1 === -1 ? 3 : direction--;
 }
 
 let count = 1;
