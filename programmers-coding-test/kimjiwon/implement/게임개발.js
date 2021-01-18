@@ -25,10 +25,7 @@ turnTime = changeX = changeY = 0;
 map[x][y] = 2;
 
 while (true) {
-  direction--;
-  if (direction === -1) {
-    direction = 3;
-  }
+  direction = (direction - 1) === -1 ? 3 : direction—;
   changeX = x + dx[direction];
   changeY = y + dy[direction];
   if (turnTime === 4) {
@@ -43,9 +40,7 @@ while (true) {
     count++;
     turnTime = 0;
     continue;
-  } else {
-    turnTime++;
-  }
+  turnTime++;
   if (turnTime === 5) break;
 }
 console.log(map);
