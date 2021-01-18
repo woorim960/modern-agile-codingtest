@@ -4,22 +4,26 @@ const move = rl
   .question("움직인 방향은?(R: 오른쪽, L: 왼쪽, U:위, D: 아래)")
   .split(" ");
 
-let row, column;
-row = column = 1;
+const dy = [0, 0, -1, 1];
+const dx = [1, -1, 0, 0];
+const direction = ['R', 'L', 'U', 'D'];
+
+let x, y, nx, ny;
+x = y = 1;
+nx = ny = 0;
 
 for (let i of move) {
-  i === "R"
-    ? column++
-    : i === "L"
-    ? column--
-    : i === "U"
-    ? row--
-    : i === "D"
-    ? row++
-    : row;
+  let position = direction.indexOf(i);
 
-  !row ? row++ : !column ? column++ : column;
-  row > boxsize ? row-- : column > boxsize ? column-- : column;
+  nx = x + dx[position];
+  ny = y + dy[position];
+  
+  if (!nx || !ny || nx > boxsize || ny > boxsize) {
+    continue;
+  }
+
+  x = nx;
+  y = ny;
 }
 
-console.log(`${row} ${column}`);
+console.log(`${x} ${y}`);
