@@ -4,7 +4,7 @@ const rl = require("readline-sync");
 let [ n, m ] = rl.question("공간의 크기를 입력해주세요.\n>> ").split(' ').map((val) => parseInt(val));
 const d = Array.from(Array(n), () => Array(m).fill(0))
 
-let [ x, y , direction ] = rl.question("현재 캐릭터의 x좌표, y좌표, 방향을 입력해주세요.\n>> ").split(' ').map((val) => parseInt(val));;
+let [ x, y , direction ] = rl.question("현재 캐릭터의 x좌표, y좌표, 방향을 입력해주세요.\n>> ").split(' ').map((val) => parseInt(val));
 d[x][y] = 1;
 
 array = [];
@@ -16,10 +16,7 @@ let dx = [ -1, 0, 1, 0 ];
 let dy = [ 0, 1, 0, -1 ]; 
 
 function turn_left() {
-  direction -= 1;
-  if (direction === -1) {
-    direction = 3;
-  }
+  direction = direction - 1 === -1 ? 3 : direction--;
 }
 
 let count = 1;
@@ -37,9 +34,8 @@ while(true) {
     count++;
     turn_time = 0;
     continue;
-  } else {
-    turn_time++;
   }
+  turn_time++;
   if (turn_time === 4) {
     nx = x - dx[direction];
     ny = y - dy[direction];
