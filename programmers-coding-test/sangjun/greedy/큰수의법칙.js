@@ -7,24 +7,28 @@ function largeNumRule(n, m, k) {
     randomNum.push(Math.floor(Math.random() * 9 + 1));
   }
 
-  let descendNum = randomNum.sort();
-  let first = descendNum[n - 1];
-  let second = descendNum[n - 2];
+  const descendNum = randomNum.sort((a, b) => b - a);
+
+  const first = descendNum[0];
+  const second = descendNum[1];
 
   while (true) {
     for (let i = 0; i < k; i++) {
       if (m == 0) {
           break;
       }
-    result += first
-    m--;
+
+      result += first
+      m--;
     }
+    
     if (m == 0) {
       break;
     }
-  result += second;
-  m--;
-}
+
+    result += second;
+    m--;
+  }
 
   console.log(descendNum)
   return result;
