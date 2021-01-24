@@ -23,8 +23,7 @@ function solution(x, y) {
     needVisitQueue.push([x, y]);
     
     while (needVisitQueue.length !== 0) {
-        const node = needVisitQueue.shift();
-        [x, y] = node;
+        [x, y] = needVisitQueue.shift();
         
         for (let i = 0; i < 4; i++) {
             nx = x + dx[i];
