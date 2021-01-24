@@ -11,7 +11,7 @@ const graph = [
 ];
 
 const visited = {};
-let result = [];
+const result = [];
 
 function dfs(graph, x, visited) {
   visited[x] = true;
