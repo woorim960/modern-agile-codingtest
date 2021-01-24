@@ -26,9 +26,8 @@ queue.push([0, 0]);
 
 function escape(queue, visit, n, m) {
   while (queue.length) {
-    let delqueue = queue.shift();
-    let x = delqueue[0];
-    let y = delqueue[1];
+    const v = queue.shift();
+    const [x, y] = v;
     for (let i = 0; i < dx.length; i++) {
       let nx = x + dx[i];
       let ny = y + dy[i];
