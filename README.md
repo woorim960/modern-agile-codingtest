@@ -102,8 +102,8 @@ function solution(a, b) {
 * 상수는 변수보다 상단에 선언해야한다.
 */
 function solution(a, b) {
-    const MIN = a < b ? a : b,
-          MAX = a > b ? a : b;
+    const MIN = Math.min(a, b),
+          MAX = Math.max(a, b);
 
     let sum = 0;
     for (let num = MIN; num <= MAX; num++) {

@@ -8,7 +8,11 @@ let [x, y] = [1, 1];
 
 for (let i in moves) {
     if (movePlan[i] === moves[0]) {
+<<<<<<< HEAD
         y - 1 === 0 ? y === 1 : y = y - 1;
+=======
+        y = y - 1 === 0 ? 1 : y - 1;
+>>>>>>> master
     }
     if (movePlan[i] === moves[1]) {
         y + 1 === N + 1 ? y === 1 : y = y + 1;
@@ -20,4 +24,8 @@ for (let i in moves) {
         x + 1 === N + 1 ? x === 1 : x = x + 1;
     }
     console.log(`${x} ${y}`);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

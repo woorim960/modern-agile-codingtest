@@ -6,9 +6,14 @@ const characterLocation = rl.question("캐릭터위치 바라보는방향입력 
 const map = [];
 
 for (let i = 0; i < N[0]; i++) {
+<<<<<<< HEAD
     let arrayLandSee = rl.question("맵의 크기의 맞게 육지0 바다1 입력 :\n>> ").split(" ");
     let numLandSee = arrayLandSee.map((el) => parseInt(el));
     map.push(numLandSee);
+=======
+    const vector = rl.question("맵의 크기의 맞게 육지0 바다1 입력 :\n>> ").split(" ") .map((el) => parseInt(el));
+    map.push(vector);
+>>>>>>> master
 }
 
 const dx = [-1, 0, 1, 0];
@@ -24,10 +29,14 @@ let count = 1;
 map[x][y] = 1;
 
 function turnLeft() {
+<<<<<<< HEAD
     direction--;
     if (direction === -1) {
         direction = 3;
     }
+=======
+    direction = direction - 1 === -1 ? 3 : direction--;
+>>>>>>> master
 }
 
 while (true) {
@@ -42,12 +51,17 @@ while (true) {
 
     if (map[nx][ny] === 0) {
         map[nx][ny] = 1;
+<<<<<<< HEAD
         x = nx;
         y = ny;
+=======
+       [x, y] = [nx, ny];
+>>>>>>> master
         count++;
         turnTime = 0;
         console.log(count);
         continue;
+<<<<<<< HEAD
     } else {
         turnTime++;
     }
@@ -58,3 +72,12 @@ while (true) {
 }
 
 console.log(count);
+=======
+    }
+    turnTime++;
+
+    if (turnTime > 4) break;
+}
+
+console.log(count);
+>>>>>>> master
