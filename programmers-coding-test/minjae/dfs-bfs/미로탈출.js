@@ -40,5 +40,5 @@ function solution(x, y) {
         }
     }
     return maze[MAZE_X - 1][MAZE_Y - 1];
-    }
+}
 console.log(solution(0, 0));
