@@ -28,8 +28,7 @@ for (let x = 1; x < graph.length; x++) {
       continue;
     }
     if (queue.includes(graph[x][y])) {
-      visited.push(queue[0]);
-      queue.shift();
+      visited.push(queue.shift());
       continue;
     }
     queue.push(graph[x][y]);
