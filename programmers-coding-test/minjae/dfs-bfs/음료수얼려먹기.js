@@ -19,21 +19,21 @@ const iceShape = [
 const ICE_SHAPE_X = iceShape.length;
 const ICE_SHAPE_Y = iceShape[0].length;
 
+//DFS는 큐1개,스택1개 or 재귀로 구현
 function solution() {
     return allFreezeIceCube();
 }
 
 function freezeIceCube(x, y) {
-    if (x < 0 || y < 0 || x >= ICE_SHAPE_X || y >= ICE_SHAPE_Y) {
-        return false;
-    } else if (iceShape[x][y] === 0) {
+    if (x < 0 || y < 0 || x >= ICE_SHAPE_X || y >= ICE_SHAPE_Y) return false;
+    else if (iceShape[x][y] === 0) {
         iceShape[x][y] = 2;
         freezeIceCube(x - 1, y); 
         freezeIceCube(x, y - 1);
         freezeIceCube(x + 1, y);
         freezeIceCube(x, y + 1);
         return true;
-    } 
+    }  
 }
 
 function allFreezeIceCube() {
@@ -41,9 +41,7 @@ function allFreezeIceCube() {
 
     for (let i = 0; i < ICE_SHAPE_X; i++) {
        for (let j = 0; j < ICE_SHAPE_Y; j++) {
-            if (freezeIceCube(i, j)) {
-                count++;
-            }
+            if (freezeIceCube(i, j)) count++;
        }
    }
    return count;

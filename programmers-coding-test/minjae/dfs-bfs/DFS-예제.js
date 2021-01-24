@@ -9,7 +9,7 @@ const graph = {
     8: [1, 7],
 };
 
-//DFS는 큐1개 스택1개 필요 or 재귀
+//DFS는 큐1개 스택1개 필요 or 재귀함수로 구현
 function dfs(graph, startNode) {
     let visitedQueue, needVisitStack; 
     visitedQueue = needVisitStack = [];
@@ -26,4 +26,5 @@ function dfs(graph, startNode) {
     }
     return visitedQueue;
 }
+
 console.log(dfs(graph, 1));
