@@ -11,8 +11,7 @@ const graph = {
 
 //BFS는 큐 2개 사용
 function bfs(graph, startNode) {
-    let visitedQueue, needVisitQueue; 
-    visitedQueue = needVisitQueue = [];
+    const [visitedQueue, needVisitQueue] = [[], []];
 
     needVisitQueue.push(startNode);
 

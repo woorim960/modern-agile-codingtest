@@ -11,8 +11,7 @@ const graph = {
 
 //DFS는 큐1개 스택1개 필요 or 재귀함수로 구현
 function dfs(graph, startNode) {
-    let visitedQueue, needVisitStack; 
-    visitedQueue = needVisitStack = [];
+    const [visitedQueue, needVisitStack] = [[], []];
 
     needVisitStack.push(startNode);
 

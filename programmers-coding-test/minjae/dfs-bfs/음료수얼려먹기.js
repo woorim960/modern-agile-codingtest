@@ -26,7 +26,7 @@ function solution() {
 
 function freezeIceCube(x, y) {
     if (x < 0 || y < 0 || x >= ICE_SHAPE_X || y >= ICE_SHAPE_Y) return false;
-    else if (iceShape[x][y] === 0) {
+    if (iceShape[x][y] === 0) { //해당 조건이 일치하면 return 으로 빠지므로 else if 문 필요없음
         iceShape[x][y] = 2;
         freezeIceCube(x - 1, y); 
         freezeIceCube(x, y - 1);
