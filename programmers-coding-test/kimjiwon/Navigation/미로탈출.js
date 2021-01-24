@@ -19,9 +19,7 @@ const dy = [0, 0, -1, 1];
 
 const queue = [];
 
-let visit = new Array(n)
-  .fill(false)
-  .map((value) => new Array(m).fill(false).map((value) => false));
+const visit = Array.from(new Array(n), () => new Array(m).fill(false));
 
 visit[0][0] = true;
 queue.push([0, 0]);
