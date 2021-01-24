@@ -16,14 +16,15 @@ function solution() {
     //Queue(선입선출: FIFO)
     const queue = [];
 
-    queue.unshift(5);
-    queue.unshift(2);
-    queue.unshift(3);
-    queue.unshift(7);
-    queue.pop();
-    queue.unshift(1);
-    queue.unshift(4);
-    queue.pop();
+    queue.push(5);
+    queue.push(2);
+    queue.push(3);
+    queue.push(7);
+    queue.shift();
+    queue.push(1);
+    queue.push(4);
+    queue.shift();
 
     console.log(queue);
 }
+solution();
