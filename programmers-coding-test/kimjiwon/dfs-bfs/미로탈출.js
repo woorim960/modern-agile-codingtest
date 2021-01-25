@@ -19,18 +19,15 @@ const dy = [0, 0, -1, 1];
 
 const queue = [];
 
-let visit = new Array(n)
-  .fill(false)
-  .map((value) => new Array(m).fill(false).map((value) => false));
+const visit = Array.from(new Array(n), () => new Array(m).fill(false));
 
 visit[0][0] = true;
 queue.push([0, 0]);
 
 function escape(queue, visit, n, m) {
   while (queue.length) {
-    let delqueue = queue.shift();
-    let x = delqueue[0];
-    let y = delqueue[1];
+    const v = queue.shift();
+    const [x, y] = v;
     for (let i = 0; i < dx.length; i++) {
       let nx = x + dx[i];
       let ny = y + dy[i];
