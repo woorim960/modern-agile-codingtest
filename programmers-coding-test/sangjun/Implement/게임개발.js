@@ -24,7 +24,7 @@ map[x][y] = 1;
 
 function turnLeft() {
     direction = direction - 1 === -1 ? 3 : direction--;
-}
+
 
 while (true) {
     turnLeft();

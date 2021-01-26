@@ -20,4 +20,5 @@ for (let i in moves) {
         x + 1 === N + 1 ? x === 1 : x = x + 1;
     }
     console.log(`${x} ${y}`);
+
 }
