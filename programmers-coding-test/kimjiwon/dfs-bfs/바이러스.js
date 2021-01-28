@@ -10,9 +10,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.on("line", (line) => {
-  input.push(line.trim());
-}).on("close", () => {
+rl.on("line", (line) => input.push(line.trim())).on("close", () => {
   const [computers, pairs] = [parseInt(input[0]), parseInt(input[1])];
   input.splice(0, 2);
   arr = Array.from(Array(computers + 1), () => Array(computers + 1).fill(0));
