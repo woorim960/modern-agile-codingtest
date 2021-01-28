@@ -12,9 +12,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.on("line", (line) => {
-  input.push(line.trim());
-}).on("close", () => {
+rl.on("line", (line) => input.push(line.trim())).on("close", () => {
   const [n, m, v] = input[0].split(" ").map(Number);
   input = input.slice(1);
   arr = Array.from(Array(n + 1), () => Array(n + 1).fill(0));
