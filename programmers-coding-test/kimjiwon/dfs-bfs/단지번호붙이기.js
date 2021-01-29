@@ -26,7 +26,6 @@ rl.on("line", (line) => input.push(line.trim())).on("close", () => {
       }
     }
   }
-
   result.sort((a, b) => a - b);
   result.unshift(total);
   console.log(result.join("\n"));
