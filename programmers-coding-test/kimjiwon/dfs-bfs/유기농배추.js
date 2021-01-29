@@ -25,7 +25,7 @@ rl.on("line", (line) => input.push(line.trim())).on("close", () => {
     //배추밭 만들기
     for (let i = 0; i < cabbageField.length; i++) {
       for (let j = 0; j < cabbageField[i].length; j++) {
-        if (bfs(i, j, y, x)) count++;
+        if (dfs(i, j, y, x)) count++;
       }
     }
 
@@ -36,14 +36,14 @@ rl.on("line", (line) => input.push(line.trim())).on("close", () => {
   console.log(result.join("\n"));
 });
 
-const bfs = (x, y, xLength, yLength) => {
+const dfs = (x, y, xLength, yLength) => {
   if (x < 0 || x > xLength - 1 || y < 0 || y > yLength - 1) return false;
   if (cabbageField[x][y] === 1) {
     cabbageField[x][y] = 2;
-    bfs(x + 1, y, xLength, yLength);
-    bfs(x - 1, y, xLength, yLength);
-    bfs(x, y + 1, xLength, yLength);
-    bfs(x, y - 1, xLength, yLength);
+    dfs(x + 1, y, xLength, yLength);
+    dfs(x - 1, y, xLength, yLength);
+    dfs(x, y + 1, xLength, yLength);
+    dfs(x, y - 1, xLength, yLength);
     return true;
   }
   return false;
