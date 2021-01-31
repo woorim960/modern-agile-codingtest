@@ -12,12 +12,12 @@ let farmHeight, farmWidth;
 farmHeight = farmWidth = 0;
 
 function solution(ripeTomato) {
-    let day = bfs(ripeTomato);
+    let answer = bfs(ripeTomato);
 
     for (let i = 0; i < farmHeight; i++) {
         if(farm[i].indexOf(0) !== -1) return -1;
     }
-    return day;
+    return answer;
 }
 
 function bfs(ripeTomato) {
@@ -29,26 +29,6 @@ function bfs(ripeTomato) {
 
     while (ripeTomato.length > tomatoCursor) {
 
-        /*  메모리 초과 소스
-          let nextRipeTomatoCount = ripeTomato.length;
-          day += 1;
-
-          for (let i = 0; i < nextRipeTomatoCount; i++) {
-              [x, y] = ripeTomato[0];
-
-              for (let j = 0; j < dx.length; j++) {
-                  nx = x + dx[j];
-                  ny = y + dy[j];
-
-                  if(rangeCheck(nx, ny) && farm[nx][ny] === 0) {
-                      farm[nx][ny] = 1;
-                      ripeTomato.push([nx, ny]);
-                  }
-              }
-              ripeTomato = ripeTomato.slice(1);
-        */
-      
-        //틀렸습니다.
         const [x, y] = ripeTomato[tomatoCursor++];
 
         for(let i = 0; i < dx.length; i++) {
@@ -77,12 +57,16 @@ rl.on("line", function (line) {
 
     farm = Array.from(Array(farmHeight), () => new Array(farmWidth));
 
+    for(let i = 0; i < farmHeight; i++) {
+        farm[i] = input[i].split(" ").map(el => parseInt(el));
+    }
+
     for(let x = 0; x < farmHeight; x++) {
-        farm[x] = input[x].split(" ").map(el => parseInt(el));
-
-        let y = farm[x].indexOf(1);
-
-        if(y !== -1) ripeTomato.push([x, y]);
+        for(let y = 0; y < farmWidth; y++) {
+            if(farm[x][y] === 1) {
+                ripeTomato.push([x, y]);
+            }
+        }
     }
 
     console.log(solution(ripeTomato));
