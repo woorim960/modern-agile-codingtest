@@ -14,9 +14,7 @@ function dfs(startNode) {
 
     dfsResult.push(startNode);
     for (let i = 1; i < graph.length; i++) { 
-        if (graph[startNode][i] === 1 && dfsVisited[i] === false) { 
-            dfs(i); 
-        } 
+        if (graph[startNode][i] === 1 && dfsVisited[i] === false) dfs(i);
     }
     return dfsResult;
 }
@@ -29,6 +27,7 @@ function bfs(startNode) {
 
     while(needVisitQueue.length !== 0) {
         const node = needVisitQueue.shift();
+
         bfsVisited[node] = true;
         for (let i = 1; i < graph.length; i++) {
             if (graph[node][i] === 1 && bfsVisited[i] === false) {
@@ -54,7 +53,6 @@ function adjacencyMatrix(node, input) {
 rl.on("line", function (line) {
     input.push(line); 
 }).on("close", function () { 
-    // input : ['4 5 1', '1 2', '1 3', '1 4', '2 4', '3 4']
     let [node, trunkLine, startNode] = input[0].split(" ").map((el) => parseInt(el)); 
     input = input.slice(1); 
 
