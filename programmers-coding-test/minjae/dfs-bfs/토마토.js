@@ -12,7 +12,7 @@ let farmHeight, farmWidth;
 farmHeight = farmWidth = 0;
 
 function solution(ripeTomato) {
-    let answer = bfs(ripeTomato);
+    const answer = bfs(ripeTomato);
 
     for (let i = 0; i < farmHeight; i++) {
         if (farm[i].indexOf(0) !== -1) return -1;
@@ -32,8 +32,8 @@ function bfs(ripeTomato) {
         const [x, y] = ripeTomato[tomatoCursor++];
 
         for (let i = 0; i < dx.length; i++) {
-            nx = x + dx[i];
-            ny = y + dy[i];
+            [nx, ny] = [x + dx[i], y + dy[i]];
+
             if (rangeCheck(nx, ny) && farm[nx][ny] === 0) {
                 farm[nx][ny] = farm[x][y] + 1;
                 ripeTomato.push([nx, ny]);
@@ -63,9 +63,7 @@ rl.on("line", function (line) {
 
     for (let x = 0; x < farmHeight; x++) {
         for (let y = 0; y < farmWidth; y++) {
-            if (farm[x][y] === 1) {
-                ripeTomato.push([x, y]);
-            }
+            if (farm[x][y] === 1) ripeTomato.push([x, y]);
         }
     }
 
