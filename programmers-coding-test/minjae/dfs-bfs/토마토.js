@@ -15,7 +15,7 @@ function solution(ripeTomato) {
     let answer = bfs(ripeTomato);
 
     for (let i = 0; i < farmHeight; i++) {
-        if(farm[i].indexOf(0) !== -1) return -1;
+        if (farm[i].indexOf(0) !== -1) return -1;
     }
     return answer;
 }
@@ -31,10 +31,10 @@ function bfs(ripeTomato) {
 
         const [x, y] = ripeTomato[tomatoCursor++];
 
-        for(let i = 0; i < dx.length; i++) {
+        for (let i = 0; i < dx.length; i++) {
             nx = x + dx[i];
             ny = y + dy[i];
-            if(rangeCheck(nx, ny) && farm[nx][ny] === 0) {
+            if (rangeCheck(nx, ny) && farm[nx][ny] === 0) {
                 farm[nx][ny] = farm[x][y] + 1;
                 ripeTomato.push([nx, ny]);
                 day = farm[nx][ny] - 1; //첫날 제외해야되서 -1
@@ -57,13 +57,13 @@ rl.on("line", function (line) {
 
     farm = Array.from(Array(farmHeight), () => new Array(farmWidth));
 
-    for(let i = 0; i < farmHeight; i++) {
+    for (let i = 0; i < farmHeight; i++) {
         farm[i] = input[i].split(" ").map(el => parseInt(el));
     }
 
-    for(let x = 0; x < farmHeight; x++) {
-        for(let y = 0; y < farmWidth; y++) {
-            if(farm[x][y] === 1) {
+    for (let x = 0; x < farmHeight; x++) {
+        for (let y = 0; y < farmWidth; y++) {
+            if (farm[x][y] === 1) {
                 ripeTomato.push([x, y]);
             }
         }
