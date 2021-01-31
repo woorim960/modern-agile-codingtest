@@ -1,3 +1,4 @@
+const { count } = require("console");
 const readline = require("readline"); 
 const rl = readline.createInterface({ 
     input: process.stdin, 
@@ -7,15 +8,13 @@ const rl = readline.createInterface({
 let input = [];
 let graph = []; 
 let dfsVisited = [];
-let count = 0;
+let result = 0;
 
 function dfs(computers, startNode) { 
     dfsVisited[startNode] = true; 
 
     for (let i = 1; i < computers; i++) { 
-        if (graph[startNode][i] === 1 && !dfsVisited[i]) { 
-            dfs(computers, i); 
-        } 
+        if (graph[startNode][i] === 1 && !dfsVisited[i]) dfs(computers, i);
     }
 }
 
@@ -44,13 +43,9 @@ rl.on("line", function (line) {
     //모든 dfs 재귀 함수 호출 이후
     for (let i = 2; i <= computers; i++) {
         if (dfsVisited[i] === true) {
-            count += 1;
+            result += 1;
         }
     }
-
-    //결과 출력
-    console.log(count);
-
-    process.exit(); 
+    console.log(result);
 });
 
