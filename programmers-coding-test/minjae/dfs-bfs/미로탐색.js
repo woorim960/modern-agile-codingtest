@@ -11,7 +11,7 @@ let mazeHeight, mazeWidth;
 mazeHeight = mazeWidth = 0;
 
 function bfs(x, y) {
-    let needVisitQueue = [];
+    const needVisitQueue = [];
 
     let nx, ny;
     nx = ny = 0;
@@ -23,10 +23,9 @@ function bfs(x, y) {
         [x, y] = node;
 
         for (let i = 0; i < dx.length; i++) {
-            nx = x + dx[i];
-            ny = y + dy[i];
+            [nx, ny] = [x + dx[i], y + dy[i]];
 
-            if (nx < 0 || ny < 0 || nx >= mazeHeight || ny >= mazeWidth) continue;
+            if (!rangeCheck(nx, ny)) continue;
             if (maze[nx][ny] === 0) continue;
             if (maze[nx][ny] === 1) {
                 maze[nx][ny] = maze[x][y] + 1;
@@ -35,6 +34,11 @@ function bfs(x, y) {
         }
     }
     return maze[mazeHeight - 1][mazeWidth - 1];
+}
+
+function rangeCheck(x, y) {
+    if (x >= 0 && x < mazeHeight && y >= 0 && y < mazeWidth) return true;
+    return false;
 }
 
 //입력 및 결과 출력
