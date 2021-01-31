@@ -21,7 +21,7 @@ function solution() {
             } 
         } 
     } 
-    console.log(earthworm); 
+    return earthworm; 
 }
 
 function dfs(x, y) {
@@ -32,9 +32,7 @@ function dfs(x, y) {
             dfs(x, y + 1);
             dfs(x - 1, y);
             dfs(x, y - 1);
-            return true;
         }
-        return false;
     }
 }
 
@@ -47,7 +45,7 @@ function createForm(input) {
     [farmHeight, farmWidth, cabbages] = input[0].split(" ").map(el => parseInt(el));
     farm = Array.from(Array(farmHeight), () => new Array(farmWidth).fill(0));
 
-    for(let j = 1; j <= cabbages; j++) {
+    for (let j = 1; j <= cabbages; j++) {
         let [x, y] = input[j].split(" ").map(el => parseInt(el));
         farm[x][y] = 1;
     }
@@ -62,7 +60,7 @@ rl.on("line", function (line) {
 
     for (let i = 0; i < testCase; i++) {
         createForm(input);
-        solution();
+        console.log(solution());
         input = input.slice(cabbages + 1);
     }
 });
