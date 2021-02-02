@@ -1,0 +1,3 @@
+SELECT count(DISTINCT NAME)
+from ANIMAL_INS
+where NAME is NOT NULL;
