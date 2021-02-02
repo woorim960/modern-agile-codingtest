@@ -4,15 +4,15 @@ const rl = readline.createInterface({
     output: process.stdout, 
 }); 
 
-let input = [];
+const input = [];
 
 function solution(n, m) {
    const sumPoint = n.reduce((a, b) => a + b);
    const averagePoint = Math.floor(sumPoint / m);
 
    let count = 0;
-   for(let i = 0; i < n.length; i++) {
-       if(n[i] > averagePoint) count++;
+   for (let i = 0; i < n.length; i++) {
+       if (n[i] > averagePoint) count++;
    }
     return ((count / m) * 100).toFixed(3);
 }
