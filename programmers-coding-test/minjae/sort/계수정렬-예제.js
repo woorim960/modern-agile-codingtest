@@ -4,7 +4,6 @@ function solution() {
     const maxNum = Math.max(...list);
     const count = {};
 
-    let countLength = 0;
     for (let i = 0; i < maxNum + 1; i++) {
         count[i] = 0;
     }
@@ -13,9 +12,7 @@ function solution() {
         count[list[i]]++;
     }
 
-    countLength = Object.keys(count).length;
-
-    for (let i = 0; i < countLength; i++) {
+    for (let i = 0; i < list.length; i++) {
         for (let j = 0; j < count[i]; j++) {
             result.push(i);
         }
