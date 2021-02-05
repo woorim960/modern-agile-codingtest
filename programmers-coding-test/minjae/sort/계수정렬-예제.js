@@ -12,7 +12,7 @@ function solution() {
         count[list[i]]++;
     }
 
-    for (let i = 0; i < list.length; i++) {
+    for (let i = 0; i < maxNum + 1; i++) {
         for (let j = 0; j < count[i]; j++) {
             result.push(i);
         }
