@@ -6,7 +6,7 @@ function solution(n, lost, reserve) {
   	// 여벌의 체육복을 지녔지만 도난당한 사람이 있다면 
   	// 배열에서 지우고 haveNum 카운트를 올린다.
     for (let i = 0; i < lost.length; i++) {
-        if (reserve.indexOf(lost[i]) !== -1) {
+        if (reserve.includes(lost[i])) {
             reserve.splice(reserve.indexOf(lost[i]), 1);
             lost.splice(i, 1);
             haveNum ++;
