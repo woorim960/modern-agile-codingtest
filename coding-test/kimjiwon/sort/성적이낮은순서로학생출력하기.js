@@ -9,13 +9,14 @@ for (let i = 1; i < N + 1; i++) {
   students.push({ name: student[0], value: +student[1] });
 }
 
-students.sort((a, b) => {
-  if (a.value < b.value) return -1;
-  if (a.value > b.value) return 1;
-  return 0;
-});
+// students.sort((a, b) => {
+//   if (a.value < b.value) return -1;
+//   if (a.value > b.value) return 1;
+//   return 0;
+// });
+// 아래처럼 하면 됨.
+students.sort((a, b) => a.value - b.value);
 
 students.forEach((el) => {
-  name += `${el.name} `;
+  process.stdout.write(`${el} `);
 });
-console.log(name);
