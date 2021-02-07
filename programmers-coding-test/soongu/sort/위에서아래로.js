@@ -9,6 +9,4 @@ for (let i = 0; i < N; i++) {
 }
 
 array.sort((a, b) => b - a);
-for (let i = 0; i < N; i++) {
-    process.stdout.write(` ${array[i]} `);
-}
+array.forEach(el => process.stdout.write(`${el} `);
