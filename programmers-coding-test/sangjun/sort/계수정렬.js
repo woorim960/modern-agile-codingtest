@@ -1,5 +1,5 @@
 function solution() {
-    const arr = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
+    const arr = [7, 5, 9, 0, 3, 1, 6, 2, 9, 1, 4, 8, 0, 5, 2];
 
     const count = [];
     const result = [];
