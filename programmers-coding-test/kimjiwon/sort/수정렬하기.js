@@ -7,6 +7,6 @@ for (let i = 1; i < input.length; i++) {
     resultArr.push(+input[i]);
 }
 
-resultArr.sort((a, b) => a -b);
+resultArr.sort((a, b) => a - b);
 
 console.log(resultArr.join("\n"));
