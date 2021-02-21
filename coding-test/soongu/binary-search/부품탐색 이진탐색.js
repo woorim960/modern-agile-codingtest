@@ -7,7 +7,7 @@ const M = parseInt(input[2]);
 const order = input[3].split(' ').map(Number);
 
 function binary_search(product, target, start, end) {
-    let mid = parseInt((start + end) / 2);
+    const mid = parseInt((start + end) / 2);
     while (start <= end) {
         if (product.includes(target) === false) return undefined;
         if (product[mid] === target) return mid;
