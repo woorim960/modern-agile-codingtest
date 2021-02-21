@@ -3,13 +3,11 @@ let input = line.trim().split("\n");
 
 const [N, K] = input[0].split(" ").map(Number);
 
-const arrStore = [];
+const A = input[1].split(" ").map(Number);
+const B = input[2].split(" ").map(Number);
 
-arrStore.push(input[1].split(" ").map(Number));
-arrStore.push(input[2].split(" ").map(Number));
-
-arrStore[0].sort((a, b) => a - b);
-arrStore[1].sort((a, b) => b - a);
+A.sort((a, b) => a - b);
+B.sort((a, b) => b - a);
 
 for (let i = 0; i < K; i++) {
   //두번째 방법(비효율적)
@@ -17,16 +15,11 @@ for (let i = 0; i < K; i++) {
   //   const bMax = Math.max.apply(null, arrStore[1]);
   //   const alocation = arrStore[0].indexOf(aMin);
   //   const blocation = arrStore[1].indexOf(bMax);
-  const aMin = arrStore[0][i];
-  const bMax = arrStore[1][i];
-
-  if (aMin > bMax - 1) break;
-
-  arrStore[0][i] = bMax;
-  arrStore[1][i] = aMin;
+  if (A[i] >= B[i]) break; 
+  [A[i], B[i]] = [B[i], A[i]];
 }
 
-const result = arrStore[0].reduce((a, b) => {
+const result = A.reduce((a, b) => {
   return a + b;
 });
 
