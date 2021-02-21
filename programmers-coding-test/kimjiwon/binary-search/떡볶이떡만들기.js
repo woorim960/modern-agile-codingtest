@@ -12,10 +12,11 @@ let result = 0;
 
 while (start <= end) {
   const mid = parseInt((start + end) / 2);
-  let client = riceCake
-    .map((x) => x - mid)
-    .filter((num) => num > 0)
-    .reduce((acc, x) => acc + x);
+  const client = riceCake
+    .reduce((acc, x) => {
+        if (x > mid) acc + x;
+        return acc;
+    }, 0);
   client < M ? (end = mid - 1) : ((start = mid + 1), (result = mid));
 }
 console.log(result);
