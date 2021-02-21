@@ -8,7 +8,7 @@ let end = Math.max.apply(0, array);
 let result = 0;
 
 while(start <= end) {
-    let mid = parseInt((start + end) / 2);
+    const mid = parseInt((start + end) / 2);
     let total = 0;
     for (let i of array) {
         if (i > mid) total += i - mid;
