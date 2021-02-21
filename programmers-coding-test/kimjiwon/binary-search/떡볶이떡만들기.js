@@ -11,7 +11,7 @@ let end = riceCake[0];
 let result = 0;
 
 while (start <= end) {
-  let mid = parseInt((start + end) / 2);
+  const mid = parseInt((start + end) / 2);
   let client = riceCake
     .map((x) => x - mid)
     .filter((num) => num > 0)
