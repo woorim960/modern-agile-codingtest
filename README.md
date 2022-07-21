@@ -1,13 +1,13 @@
-# 💻 우아한 애자일 코딩테스트
-의지가 있는 학생들을 선별하여 ‘SW 개발 전문 동아리’인 ‘우아한 애자일’을 개설하였다.
+# 💻 모던 애자일 코딩테스트
+의지가 있는 학생들을 선별하여 ‘SW 개발 전문 동아리’인 ‘모던 애자일’을 개설하였다.
 
-* 동아리명 : **우아한 애자일**  
+* 동아리명 : **모던 애자일**  
 * 개설 : 2020.12.03(목)
 * 기수 : 1기
 
 <br>
 
-## 👨🏻‍💻 우아한 코더
+## 👨🏻‍💻 모던 코더
 * 팀장(리뷰어) : **박우림** <[woorim960](https://github.com/woorim960)>
    - 블로그 : [세상의 잣대가 아닌](https://blog.naver.com/dnfla420)
    - 유튜브 : [우리밋_woorimIT](https://www.youtube.com/channel/UCS0F25vig_sPIQXMiK8IdSg?view_as=subscriber)
@@ -58,7 +58,7 @@ sort, dfs-bfs, 완전탐색, 시뮬레이션, 구현 등에 대한 정도로 취
 1. 주어진 코딩테스트 과제를 수행
 2. 풀이한 코딩 문제를 '파일명.js'로 만듦
 3. '파일명.js'를 개인별 Fork한 Repo의 Branch로 PUSH
-4. 개인별 깃허브 Repo에 PUSH된 Branch를 [woorim960/woowahan-agile-codingtest](https://github.com/woorim960/woowahan-agile-codingtest)로 PR을 보냄
+4. 개인별 깃허브 Repo에 PUSH된 Branch를 [woorim960/modern-agile-codingtest](https://github.com/woorim960/modern-agile-codingtest)로 PR을 보냄
 5. 리뷰어 **박우림**이 도착한 PR을 검토하여 코드 리뷰
 6. 해당 과정을 반복  
 -> 자바스크립트 문법에 적응 & 효율적인 코딩과 컨벤션을 유지할 수 있을 때까지
@@ -105,8 +105,7 @@ function solution(a, b) {
  */
 
 function solution(a, b) {
-    const MIN = Math.min(a, b),
-          MAX = Math.max(a, b);
+    const [MAX, MIN] = a > b ? [a, b] : [b, a];
 
     let sum = 0;
     for (let num = MIN; num <= MAX; num++) {
@@ -146,7 +145,7 @@ for, while, if문 사이의 space도 convention이다.
 클래스의 구현 순서를 지키면서 프로그래밍한다.
 
 ```javascript
-class WoowahanAgile() {
+class ModernAgile() {
     상수 또는 클래스 변수
 
     인스턴스 변수
@@ -161,7 +160,7 @@ class WoowahanAgile() {
 전역 상수
 전역 변수
 
-function woowahanAgile() {
+function modernAgile() {
     변수
 
     기능 구현
